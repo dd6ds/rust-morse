@@ -1,0 +1,8 @@
+/home/developer/rust/morse/target/debug/deps/symphonia_format_riff-de11ffb61558c08c.d: /home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/symphonia-format-riff-0.5.4/src/lib.rs /home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/symphonia-format-riff-0.5.4/src/common.rs /home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/symphonia-format-riff-0.5.4/src/wave/mod.rs /home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/symphonia-format-riff-0.5.4/src/wave/chunks.rs
+
+/home/developer/rust/morse/target/debug/deps/libsymphonia_format_riff-de11ffb61558c08c.rmeta: /home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/symphonia-format-riff-0.5.4/src/lib.rs /home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/symphonia-format-riff-0.5.4/src/common.rs /home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/symphonia-format-riff-0.5.4/src/wave/mod.rs /home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/symphonia-format-riff-0.5.4/src/wave/chunks.rs
+
+/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/symphonia-format-riff-0.5.4/src/lib.rs:
+/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/symphonia-format-riff-0.5.4/src/common.rs:
+/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/symphonia-format-riff-0.5.4/src/wave/mod.rs:
+/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/symphonia-format-riff-0.5.4/src/wave/chunks.rs:

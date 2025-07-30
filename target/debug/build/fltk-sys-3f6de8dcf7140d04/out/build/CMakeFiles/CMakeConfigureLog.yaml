@@ -1,0 +1,1843 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      The system is: Linux - 6.8.0-71-generic - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/cc 
+      Build flags: -ffunction-sections;-fdata-sections;-fPIC;-m64
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/3.28.3/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/c++ 
+      Build flags: -ffunction-sections;-fdata-sections;-fPIC;-m64
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/3.28.3/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-CzyqPk"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-CzyqPk"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-CzyqPk'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_99fd6/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_99fd6.dir/build.make CMakeFiles/cmTC_99fd6.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-CzyqPk'
+        Building C object CMakeFiles/cmTC_99fd6.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64    -v -o CMakeFiles/cmTC_99fd6.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
+        COLLECT_GCC_OPTIONS='-ffunction-sections' '-fdata-sections' '-fPIC' '-m64' '-v' '-o' 'CMakeFiles/cmTC_99fd6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_99fd6.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_99fd6.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -m64 -mtune=generic -march=x86-64 -version -ffunction-sections -fdata-sections -fPIC -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cctsKlw5.s
+        GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-linux-gnu/13/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Compiler executable checksum: 38987c28e967c64056a6454abdef726e
+        COLLECT_GCC_OPTIONS='-ffunction-sections' '-fdata-sections' '-fPIC' '-m64' '-v' '-o' 'CMakeFiles/cmTC_99fd6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_99fd6.dir/'
+         as -v --64 -o CMakeFiles/cmTC_99fd6.dir/CMakeCCompilerABI.c.o /tmp/cctsKlw5.s
+        GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-ffunction-sections' '-fdata-sections' '-fPIC' '-m64' '-v' '-o' 'CMakeFiles/cmTC_99fd6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_99fd6.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_99fd6
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_99fd6.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64   -v CMakeFiles/cmTC_99fd6.dir/CMakeCCompilerABI.c.o -o cmTC_99fd6 
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-ffunction-sections' '-fdata-sections' '-fPIC' '-m64' '-v' '-o' 'cmTC_99fd6' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_99fd6.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccrOCHJA.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_99fd6 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_99fd6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-ffunction-sections' '-fdata-sections' '-fPIC' '-m64' '-v' '-o' 'cmTC_99fd6' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_99fd6.'
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-CzyqPk'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/13/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/13/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-CzyqPk']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_99fd6/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_99fd6.dir/build.make CMakeFiles/cmTC_99fd6.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-CzyqPk']
+        ignore line: [Building C object CMakeFiles/cmTC_99fd6.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64    -v -o CMakeFiles/cmTC_99fd6.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-ffunction-sections' '-fdata-sections' '-fPIC' '-m64' '-v' '-o' 'CMakeFiles/cmTC_99fd6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_99fd6.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_99fd6.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -m64 -mtune=generic -march=x86-64 -version -ffunction-sections -fdata-sections -fPIC -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cctsKlw5.s]
+        ignore line: [GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/13/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 38987c28e967c64056a6454abdef726e]
+        ignore line: [COLLECT_GCC_OPTIONS='-ffunction-sections' '-fdata-sections' '-fPIC' '-m64' '-v' '-o' 'CMakeFiles/cmTC_99fd6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_99fd6.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_99fd6.dir/CMakeCCompilerABI.c.o /tmp/cctsKlw5.s]
+        ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-ffunction-sections' '-fdata-sections' '-fPIC' '-m64' '-v' '-o' 'CMakeFiles/cmTC_99fd6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_99fd6.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_99fd6]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_99fd6.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64   -v CMakeFiles/cmTC_99fd6.dir/CMakeCCompilerABI.c.o -o cmTC_99fd6 ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-ffunction-sections' '-fdata-sections' '-fPIC' '-m64' '-v' '-o' 'cmTC_99fd6' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_99fd6.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccrOCHJA.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_99fd6 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_99fd6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccrOCHJA.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_99fd6] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
+          arg [CMakeFiles/cmTC_99fd6.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13] ==> [/usr/lib/gcc/x86_64-linux-gnu/13]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/13;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-fiTgbs"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-fiTgbs"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-fiTgbs'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0fef1/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_0fef1.dir/build.make CMakeFiles/cmTC_0fef1.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-fiTgbs'
+        Building CXX object CMakeFiles/cmTC_0fef1.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -ffunction-sections -fdata-sections -fPIC -m64    -v -o CMakeFiles/cmTC_0fef1.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
+        COLLECT_GCC_OPTIONS='-ffunction-sections' '-fdata-sections' '-fPIC' '-m64' '-v' '-o' 'CMakeFiles/cmTC_0fef1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0fef1.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_0fef1.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -m64 -mtune=generic -march=x86-64 -version -ffunction-sections -fdata-sections -fPIC -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccHm9lFr.s
+        GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/13"
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/include/c++/13
+         /usr/include/x86_64-linux-gnu/c++/13
+         /usr/include/c++/13/backward
+         /usr/lib/gcc/x86_64-linux-gnu/13/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Compiler executable checksum: c81c05345ce537099dafd5580045814a
+        COLLECT_GCC_OPTIONS='-ffunction-sections' '-fdata-sections' '-fPIC' '-m64' '-v' '-o' 'CMakeFiles/cmTC_0fef1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0fef1.dir/'
+         as -v --64 -o CMakeFiles/cmTC_0fef1.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccHm9lFr.s
+        GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-ffunction-sections' '-fdata-sections' '-fPIC' '-m64' '-v' '-o' 'CMakeFiles/cmTC_0fef1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0fef1.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_0fef1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0fef1.dir/link.txt --verbose=1
+        /usr/bin/c++  -ffunction-sections -fdata-sections -fPIC -m64   -v CMakeFiles/cmTC_0fef1.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_0fef1 
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-ffunction-sections' '-fdata-sections' '-fPIC' '-m64' '-v' '-o' 'cmTC_0fef1' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_0fef1.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVQ7D0V.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_0fef1 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_0fef1.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-ffunction-sections' '-fdata-sections' '-fPIC' '-m64' '-v' '-o' 'cmTC_0fef1' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_0fef1.'
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-fiTgbs'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/include/c++/13]
+          add: [/usr/include/x86_64-linux-gnu/c++/13]
+          add: [/usr/include/c++/13/backward]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/include/c++/13] ==> [/usr/include/c++/13]
+        collapse include dir [/usr/include/x86_64-linux-gnu/c++/13] ==> [/usr/include/x86_64-linux-gnu/c++/13]
+        collapse include dir [/usr/include/c++/13/backward] ==> [/usr/include/c++/13/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/13/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/13;/usr/include/x86_64-linux-gnu/c++/13;/usr/include/c++/13/backward;/usr/lib/gcc/x86_64-linux-gnu/13/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-fiTgbs']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0fef1/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_0fef1.dir/build.make CMakeFiles/cmTC_0fef1.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-fiTgbs']
+        ignore line: [Building CXX object CMakeFiles/cmTC_0fef1.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -ffunction-sections -fdata-sections -fPIC -m64    -v -o CMakeFiles/cmTC_0fef1.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-ffunction-sections' '-fdata-sections' '-fPIC' '-m64' '-v' '-o' 'CMakeFiles/cmTC_0fef1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0fef1.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_0fef1.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -m64 -mtune=generic -march=x86-64 -version -ffunction-sections -fdata-sections -fPIC -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccHm9lFr.s]
+        ignore line: [GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/13"]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/include/c++/13]
+        ignore line: [ /usr/include/x86_64-linux-gnu/c++/13]
+        ignore line: [ /usr/include/c++/13/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/13/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: c81c05345ce537099dafd5580045814a]
+        ignore line: [COLLECT_GCC_OPTIONS='-ffunction-sections' '-fdata-sections' '-fPIC' '-m64' '-v' '-o' 'CMakeFiles/cmTC_0fef1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0fef1.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_0fef1.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccHm9lFr.s]
+        ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-ffunction-sections' '-fdata-sections' '-fPIC' '-m64' '-v' '-o' 'CMakeFiles/cmTC_0fef1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0fef1.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_0fef1]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0fef1.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/c++  -ffunction-sections -fdata-sections -fPIC -m64   -v CMakeFiles/cmTC_0fef1.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_0fef1 ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-ffunction-sections' '-fdata-sections' '-fPIC' '-m64' '-v' '-o' 'cmTC_0fef1' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_0fef1.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVQ7D0V.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_0fef1 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_0fef1.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccVQ7D0V.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_0fef1] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
+          arg [CMakeFiles/cmTC_0fef1.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13] ==> [/usr/lib/gcc/x86_64-linux-gnu/13]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/13;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:250 (check_include_file)"
+      - "fltk/CMake/setup.cmake:186 (CHECK_TYPE_SIZE)"
+      - "fltk/CMakeLists.txt:68 (include)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-d5i44z"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-d5i44z"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-d5i44z'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_25aa1/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_25aa1.dir/build.make CMakeFiles/cmTC_25aa1.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-d5i44z'
+        Building C object CMakeFiles/cmTC_25aa1.dir/CheckIncludeFile.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_25aa1.dir/CheckIncludeFile.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-d5i44z/CheckIncludeFile.c
+        Linking C executable cmTC_25aa1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_25aa1.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_25aa1.dir/CheckIncludeFile.c.o -o cmTC_25aa1 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-d5i44z'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:251 (check_include_file)"
+      - "fltk/CMake/setup.cmake:186 (CHECK_TYPE_SIZE)"
+      - "fltk/CMakeLists.txt:68 (include)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-7i5kkp"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-7i5kkp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-7i5kkp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0df00/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_0df00.dir/build.make CMakeFiles/cmTC_0df00.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-7i5kkp'
+        Building C object CMakeFiles/cmTC_0df00.dir/CheckIncludeFile.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_0df00.dir/CheckIncludeFile.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-7i5kkp/CheckIncludeFile.c
+        Linking C executable cmTC_0df00
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0df00.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_0df00.dir/CheckIncludeFile.c.o -o cmTC_0df00 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-7i5kkp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:252 (check_include_file)"
+      - "fltk/CMake/setup.cmake:186 (CHECK_TYPE_SIZE)"
+      - "fltk/CMakeLists.txt:68 (include)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-rlQrFo"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-rlQrFo"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-rlQrFo'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b132c/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b132c.dir/build.make CMakeFiles/cmTC_b132c.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-rlQrFo'
+        Building C object CMakeFiles/cmTC_b132c.dir/CheckIncludeFile.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_b132c.dir/CheckIncludeFile.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-rlQrFo/CheckIncludeFile.c
+        Linking C executable cmTC_b132c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b132c.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_b132c.dir/CheckIncludeFile.c.o -o cmTC_b132c 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-rlQrFo'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:146 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:271 (__check_type_size_impl)"
+      - "fltk/CMake/setup.cmake:186 (CHECK_TYPE_SIZE)"
+      - "fltk/CMakeLists.txt:68 (include)"
+    checks:
+      - "Check size of short"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-THPcFL"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-THPcFL"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_SIZEOF_SHORT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-THPcFL'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1349d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_1349d.dir/build.make CMakeFiles/cmTC_1349d.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-THPcFL'
+        Building C object CMakeFiles/cmTC_1349d.dir/SIZEOF_SHORT.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_1349d.dir/SIZEOF_SHORT.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-THPcFL/SIZEOF_SHORT.c
+        Linking C executable cmTC_1349d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1349d.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_1349d.dir/SIZEOF_SHORT.c.o -o cmTC_1349d 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-THPcFL'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:146 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:271 (__check_type_size_impl)"
+      - "fltk/CMake/setup.cmake:187 (CHECK_TYPE_SIZE)"
+      - "fltk/CMakeLists.txt:68 (include)"
+    checks:
+      - "Check size of int"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-hIoCov"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-hIoCov"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_SIZEOF_INT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-hIoCov'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a431f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a431f.dir/build.make CMakeFiles/cmTC_a431f.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-hIoCov'
+        Building C object CMakeFiles/cmTC_a431f.dir/SIZEOF_INT.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_a431f.dir/SIZEOF_INT.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-hIoCov/SIZEOF_INT.c
+        Linking C executable cmTC_a431f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a431f.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_a431f.dir/SIZEOF_INT.c.o -o cmTC_a431f 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-hIoCov'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:146 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:271 (__check_type_size_impl)"
+      - "fltk/CMake/setup.cmake:188 (CHECK_TYPE_SIZE)"
+      - "fltk/CMakeLists.txt:68 (include)"
+    checks:
+      - "Check size of long"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-KTnVxf"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-KTnVxf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_SIZEOF_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-KTnVxf'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_500ab/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_500ab.dir/build.make CMakeFiles/cmTC_500ab.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-KTnVxf'
+        Building C object CMakeFiles/cmTC_500ab.dir/SIZEOF_LONG.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_500ab.dir/SIZEOF_LONG.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-KTnVxf/SIZEOF_LONG.c
+        Linking C executable cmTC_500ab
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_500ab.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_500ab.dir/SIZEOF_LONG.c.o -o cmTC_500ab 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-KTnVxf'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:146 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:271 (__check_type_size_impl)"
+      - "fltk/CMake/setup.cmake:189 (CHECK_TYPE_SIZE)"
+      - "fltk/CMakeLists.txt:68 (include)"
+    checks:
+      - "Check size of long long"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-2M2YY9"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-2M2YY9"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_HAVE_LONG_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-2M2YY9'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_451a1/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_451a1.dir/build.make CMakeFiles/cmTC_451a1.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-2M2YY9'
+        Building C object CMakeFiles/cmTC_451a1.dir/HAVE_LONG_LONG.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_451a1.dir/HAVE_LONG_LONG.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-2M2YY9/HAVE_LONG_LONG.c
+        Linking C executable cmTC_451a1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_451a1.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_451a1.dir/HAVE_LONG_LONG.c.o -o cmTC_451a1 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-2M2YY9'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFiles.cmake:132 (try_compile)"
+      - "fltk/CMake/resources.cmake:34 (check_include_files)"
+      - "fltk/CMake/resources.cmake:127 (fl_find_header)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-2S7FSz"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-2S7FSz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_ALSA_ASOUNDLIB_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-2S7FSz'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9d9a0/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9d9a0.dir/build.make CMakeFiles/cmTC_9d9a0.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-2S7FSz'
+        Building C object CMakeFiles/cmTC_9d9a0.dir/HAVE_ALSA_ASOUNDLIB_H.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_9d9a0.dir/HAVE_ALSA_ASOUNDLIB_H.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-2S7FSz/HAVE_ALSA_ASOUNDLIB_H.c
+        Linking C executable cmTC_9d9a0
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9d9a0.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_9d9a0.dir/HAVE_ALSA_ASOUNDLIB_H.c.o -o cmTC_9d9a0 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-2S7FSz'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFiles.cmake:132 (try_compile)"
+      - "fltk/CMake/resources.cmake:34 (check_include_files)"
+      - "fltk/CMake/resources.cmake:128 (fl_find_header)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-ZEPyEv"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-ZEPyEv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_DLFCN_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-ZEPyEv'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_83685/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_83685.dir/build.make CMakeFiles/cmTC_83685.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-ZEPyEv'
+        Building C object CMakeFiles/cmTC_83685.dir/HAVE_DLFCN_H.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_83685.dir/HAVE_DLFCN_H.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-ZEPyEv/HAVE_DLFCN_H.c
+        Linking C executable cmTC_83685
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_83685.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_83685.dir/HAVE_DLFCN_H.c.o -o cmTC_83685 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-ZEPyEv'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFiles.cmake:132 (try_compile)"
+      - "fltk/CMake/resources.cmake:34 (check_include_files)"
+      - "fltk/CMake/resources.cmake:129 (fl_find_header)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-rqg5jb"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-rqg5jb"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_GL_GLU_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-rqg5jb'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_34ae6/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_34ae6.dir/build.make CMakeFiles/cmTC_34ae6.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-rqg5jb'
+        Building C object CMakeFiles/cmTC_34ae6.dir/HAVE_GL_GLU_H.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_34ae6.dir/HAVE_GL_GLU_H.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-rqg5jb/HAVE_GL_GLU_H.c
+        Linking C executable cmTC_34ae6
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_34ae6.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_34ae6.dir/HAVE_GL_GLU_H.c.o -o cmTC_34ae6 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-rqg5jb'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFiles.cmake:132 (try_compile)"
+      - "fltk/CMake/resources.cmake:34 (check_include_files)"
+      - "fltk/CMake/resources.cmake:130 (fl_find_header)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-OkCgCH"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-OkCgCH"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_LOCALE_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-OkCgCH'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_cf6cb/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_cf6cb.dir/build.make CMakeFiles/cmTC_cf6cb.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-OkCgCH'
+        Building C object CMakeFiles/cmTC_cf6cb.dir/HAVE_LOCALE_H.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_cf6cb.dir/HAVE_LOCALE_H.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-OkCgCH/HAVE_LOCALE_H.c
+        Linking C executable cmTC_cf6cb
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cf6cb.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_cf6cb.dir/HAVE_LOCALE_H.c.o -o cmTC_cf6cb 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-OkCgCH'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFiles.cmake:132 (try_compile)"
+      - "fltk/CMake/resources.cmake:34 (check_include_files)"
+      - "fltk/CMake/resources.cmake:131 (fl_find_header)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-YP78AG"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-YP78AG"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_OPENGL_GLU_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-YP78AG'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f7623/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f7623.dir/build.make CMakeFiles/cmTC_f7623.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-YP78AG'
+        Building C object CMakeFiles/cmTC_f7623.dir/HAVE_OPENGL_GLU_H.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_f7623.dir/HAVE_OPENGL_GLU_H.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-YP78AG/HAVE_OPENGL_GLU_H.c
+        /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-YP78AG/HAVE_OPENGL_GLU_H.c:2:10: fatal error: OpenGL/glu.h: No such file or directory
+            2 | #include <OpenGL/glu.h>
+              |          ^~~~~~~~~~~~~~
+        compilation terminated.
+        gmake[1]: *** [CMakeFiles/cmTC_f7623.dir/build.make:78: CMakeFiles/cmTC_f7623.dir/HAVE_OPENGL_GLU_H.c.o] Error 1
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-YP78AG'
+        gmake: *** [Makefile:127: cmTC_f7623/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFiles.cmake:132 (try_compile)"
+      - "fltk/CMake/resources.cmake:34 (check_include_files)"
+      - "fltk/CMake/resources.cmake:132 (fl_find_header)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-Yldg6V"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-Yldg6V"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_STDIO_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-Yldg6V'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f40c1/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f40c1.dir/build.make CMakeFiles/cmTC_f40c1.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-Yldg6V'
+        Building C object CMakeFiles/cmTC_f40c1.dir/HAVE_STDIO_H.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_f40c1.dir/HAVE_STDIO_H.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-Yldg6V/HAVE_STDIO_H.c
+        Linking C executable cmTC_f40c1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f40c1.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_f40c1.dir/HAVE_STDIO_H.c.o -o cmTC_f40c1 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-Yldg6V'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFiles.cmake:132 (try_compile)"
+      - "fltk/CMake/resources.cmake:34 (check_include_files)"
+      - "fltk/CMake/resources.cmake:133 (fl_find_header)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-5nNcJP"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-5nNcJP"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_STRINGS_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-5nNcJP'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a6559/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a6559.dir/build.make CMakeFiles/cmTC_a6559.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-5nNcJP'
+        Building C object CMakeFiles/cmTC_a6559.dir/HAVE_STRINGS_H.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_a6559.dir/HAVE_STRINGS_H.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-5nNcJP/HAVE_STRINGS_H.c
+        Linking C executable cmTC_a6559
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a6559.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_a6559.dir/HAVE_STRINGS_H.c.o -o cmTC_a6559 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-5nNcJP'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFiles.cmake:132 (try_compile)"
+      - "fltk/CMake/resources.cmake:34 (check_include_files)"
+      - "fltk/CMake/resources.cmake:134 (fl_find_header)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-cj08W1"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-cj08W1"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_SYS_SELECT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-cj08W1'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_06dca/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_06dca.dir/build.make CMakeFiles/cmTC_06dca.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-cj08W1'
+        Building C object CMakeFiles/cmTC_06dca.dir/HAVE_SYS_SELECT_H.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_06dca.dir/HAVE_SYS_SELECT_H.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-cj08W1/HAVE_SYS_SELECT_H.c
+        Linking C executable cmTC_06dca
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_06dca.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_06dca.dir/HAVE_SYS_SELECT_H.c.o -o cmTC_06dca 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-cj08W1'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFiles.cmake:132 (try_compile)"
+      - "fltk/CMake/resources.cmake:34 (check_include_files)"
+      - "fltk/CMake/resources.cmake:135 (fl_find_header)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-FO67j6"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-FO67j6"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_SYS_STDTYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-FO67j6'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_380bf/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_380bf.dir/build.make CMakeFiles/cmTC_380bf.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-FO67j6'
+        Building C object CMakeFiles/cmTC_380bf.dir/HAVE_SYS_STDTYPES_H.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_380bf.dir/HAVE_SYS_STDTYPES_H.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-FO67j6/HAVE_SYS_STDTYPES_H.c
+        /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-FO67j6/HAVE_SYS_STDTYPES_H.c:2:10: fatal error: sys/stdtypes.h: No such file or directory
+            2 | #include <sys/stdtypes.h>
+              |          ^~~~~~~~~~~~~~~~
+        compilation terminated.
+        gmake[1]: *** [CMakeFiles/cmTC_380bf.dir/build.make:78: CMakeFiles/cmTC_380bf.dir/HAVE_SYS_STDTYPES_H.c.o] Error 1
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-FO67j6'
+        gmake: *** [Makefile:127: cmTC_380bf/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFiles.cmake:132 (try_compile)"
+      - "fltk/CMake/resources.cmake:34 (check_include_files)"
+      - "fltk/CMake/resources.cmake:137 (fl_find_header)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-2QaOem"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-2QaOem"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_X11_XREGION_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-2QaOem'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_95765/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_95765.dir/build.make CMakeFiles/cmTC_95765.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-2QaOem'
+        Building C object CMakeFiles/cmTC_95765.dir/HAVE_X11_XREGION_H.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_95765.dir/HAVE_X11_XREGION_H.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-2QaOem/HAVE_X11_XREGION_H.c
+        Linking C executable cmTC_95765
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_95765.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_95765.dir/HAVE_X11_XREGION_H.c.o -o cmTC_95765 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-2QaOem'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFiles.cmake:132 (try_compile)"
+      - "fltk/CMake/resources.cmake:34 (check_include_files)"
+      - "fltk/CMake/resources.cmake:143 (fl_find_header)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-NE68R7"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-NE68R7"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_PTHREAD_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-NE68R7'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f5228/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f5228.dir/build.make CMakeFiles/cmTC_f5228.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-NE68R7'
+        Building C object CMakeFiles/cmTC_f5228.dir/HAVE_PTHREAD_H.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_f5228.dir/HAVE_PTHREAD_H.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-NE68R7/HAVE_PTHREAD_H.c
+        Linking C executable cmTC_f5228
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f5228.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_f5228.dir/HAVE_PTHREAD_H.c.o -o cmTC_f5228 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-NE68R7'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "fltk/CMake/resources.cmake:149 (try_compile)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/fltk/CMakeFiles/CMakeTmp"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/fltk/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_PTHREAD_MUTEX_RECURSIVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/fltk/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_eadf3/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_eadf3.dir/build.make CMakeFiles/cmTC_eadf3.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/fltk/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_eadf3.dir/pthread_mutex_recursive.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_eadf3.dir/pthread_mutex_recursive.c.o -c /home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake/pthread_mutex_recursive.c
+        Linking C executable cmTC_eadf3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eadf3.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_eadf3.dir/pthread_mutex_recursive.c.o -o cmTC_eadf3 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/fltk/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFiles.cmake:132 (try_compile)"
+      - "fltk/CMake/resources.cmake:34 (check_include_files)"
+      - "fltk/CMake/resources.cmake:190 (fl_find_header)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-xX31j7"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-xX31j7"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_DIRENT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-xX31j7'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9461a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9461a.dir/build.make CMakeFiles/cmTC_9461a.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-xX31j7'
+        Building C object CMakeFiles/cmTC_9461a.dir/HAVE_DIRENT_H.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_9461a.dir/HAVE_DIRENT_H.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-xX31j7/HAVE_DIRENT_H.c
+        Linking C executable cmTC_9461a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9461a.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_9461a.dir/HAVE_DIRENT_H.c.o -o cmTC_9461a 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-xX31j7'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:140 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "fltk/CMake/resources.cmake:257 (check_symbol_exists)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-YhFcYm"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-YhFcYm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_DLSYM"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-YhFcYm'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7c4a0/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_7c4a0.dir/build.make CMakeFiles/cmTC_7c4a0.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-YhFcYm'
+        Building C object CMakeFiles/cmTC_7c4a0.dir/CheckSymbolExists.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_7c4a0.dir/CheckSymbolExists.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-YhFcYm/CheckSymbolExists.c
+        Linking C executable cmTC_7c4a0
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7c4a0.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_7c4a0.dir/CheckSymbolExists.c.o -o cmTC_7c4a0  -ldl 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-YhFcYm'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:140 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "fltk/CMake/resources.cmake:260 (check_symbol_exists)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-XqtrgD"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-XqtrgD"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_LOCALECONV"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-XqtrgD'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_189e8/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_189e8.dir/build.make CMakeFiles/cmTC_189e8.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-XqtrgD'
+        Building C object CMakeFiles/cmTC_189e8.dir/CheckSymbolExists.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_189e8.dir/CheckSymbolExists.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-XqtrgD/CheckSymbolExists.c
+        Linking C executable cmTC_189e8
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_189e8.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_189e8.dir/CheckSymbolExists.c.o -o cmTC_189e8 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-XqtrgD'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:140 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "fltk/CMake/resources.cmake:264 (check_symbol_exists)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-7p2YfA"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-7p2YfA"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_PNG_GET_VALID"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-7p2YfA'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_381bf/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_381bf.dir/build.make CMakeFiles/cmTC_381bf.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-7p2YfA'
+        Building C object CMakeFiles/cmTC_381bf.dir/CheckSymbolExists.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_381bf.dir/CheckSymbolExists.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-7p2YfA/CheckSymbolExists.c
+        Linking C executable cmTC_381bf
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_381bf.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_381bf.dir/CheckSymbolExists.c.o -o cmTC_381bf  /usr/lib/x86_64-linux-gnu/libpng.so 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-7p2YfA'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:140 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "fltk/CMake/resources.cmake:265 (check_symbol_exists)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-KzWxi4"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-KzWxi4"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_PNG_SET_TRNS_TO_ALPHA"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-KzWxi4'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_117cd/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_117cd.dir/build.make CMakeFiles/cmTC_117cd.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-KzWxi4'
+        Building C object CMakeFiles/cmTC_117cd.dir/CheckSymbolExists.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_117cd.dir/CheckSymbolExists.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-KzWxi4/CheckSymbolExists.c
+        Linking C executable cmTC_117cd
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_117cd.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_117cd.dir/CheckSymbolExists.c.o -o cmTC_117cd  /usr/lib/x86_64-linux-gnu/libpng.so 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-KzWxi4'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:140 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "fltk/CMake/resources.cmake:269 (check_symbol_exists)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-cJSWwj"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-cJSWwj"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_SCANDIR"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-cJSWwj'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2330c/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_2330c.dir/build.make CMakeFiles/cmTC_2330c.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-cJSWwj'
+        Building C object CMakeFiles/cmTC_2330c.dir/CheckSymbolExists.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_2330c.dir/CheckSymbolExists.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-cJSWwj/CheckSymbolExists.c
+        Linking C executable cmTC_2330c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2330c.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_2330c.dir/CheckSymbolExists.c.o -o cmTC_2330c 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-cJSWwj'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:140 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "fltk/CMake/resources.cmake:270 (check_symbol_exists)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-YFkLoL"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-YFkLoL"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_SNPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-YFkLoL'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d8557/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d8557.dir/build.make CMakeFiles/cmTC_d8557.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-YFkLoL'
+        Building C object CMakeFiles/cmTC_d8557.dir/CheckSymbolExists.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_d8557.dir/CheckSymbolExists.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-YFkLoL/CheckSymbolExists.c
+        Linking C executable cmTC_d8557
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d8557.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_d8557.dir/CheckSymbolExists.c.o -o cmTC_d8557 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-YFkLoL'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:140 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "fltk/CMake/resources.cmake:277 (check_symbol_exists)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-PpAjlx"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-PpAjlx"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_STRCASECMP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-PpAjlx'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ddbfd/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ddbfd.dir/build.make CMakeFiles/cmTC_ddbfd.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-PpAjlx'
+        Building C object CMakeFiles/cmTC_ddbfd.dir/CheckSymbolExists.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_ddbfd.dir/CheckSymbolExists.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-PpAjlx/CheckSymbolExists.c
+        Linking C executable cmTC_ddbfd
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ddbfd.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_ddbfd.dir/CheckSymbolExists.c.o -o cmTC_ddbfd 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-PpAjlx'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:140 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "fltk/CMake/resources.cmake:279 (check_symbol_exists)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-tbz1Kk"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-tbz1Kk"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_STRLCAT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-tbz1Kk'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1df0a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_1df0a.dir/build.make CMakeFiles/cmTC_1df0a.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-tbz1Kk'
+        Building C object CMakeFiles/cmTC_1df0a.dir/CheckSymbolExists.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_1df0a.dir/CheckSymbolExists.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-tbz1Kk/CheckSymbolExists.c
+        Linking C executable cmTC_1df0a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1df0a.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_1df0a.dir/CheckSymbolExists.c.o -o cmTC_1df0a 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-tbz1Kk'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:140 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "fltk/CMake/resources.cmake:280 (check_symbol_exists)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-F5Ul8p"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-F5Ul8p"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_STRLCPY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-F5Ul8p'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fa658/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_fa658.dir/build.make CMakeFiles/cmTC_fa658.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-F5Ul8p'
+        Building C object CMakeFiles/cmTC_fa658.dir/CheckSymbolExists.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_fa658.dir/CheckSymbolExists.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-F5Ul8p/CheckSymbolExists.c
+        Linking C executable cmTC_fa658
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fa658.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_fa658.dir/CheckSymbolExists.c.o -o cmTC_fa658 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-F5Ul8p'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:140 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "fltk/CMake/resources.cmake:281 (check_symbol_exists)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-4HHM7Z"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-4HHM7Z"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_VSNPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-4HHM7Z'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_27277/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_27277.dir/build.make CMakeFiles/cmTC_27277.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-4HHM7Z'
+        Building C object CMakeFiles/cmTC_27277.dir/CheckSymbolExists.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_27277.dir/CheckSymbolExists.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-4HHM7Z/CheckSymbolExists.c
+        Linking C executable cmTC_27277
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_27277.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_27277.dir/CheckSymbolExists.c.o -o cmTC_27277 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-4HHM7Z'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:140 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "fltk/CMake/resources.cmake:283 (check_symbol_exists)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-CWFjLc"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-CWFjLc"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_SETENV"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-CWFjLc'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_57b87/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_57b87.dir/build.make CMakeFiles/cmTC_57b87.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-CWFjLc'
+        Building C object CMakeFiles/cmTC_57b87.dir/CheckSymbolExists.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_57b87.dir/CheckSymbolExists.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-CWFjLc/CheckSymbolExists.c
+        Linking C executable cmTC_57b87
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_57b87.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_57b87.dir/CheckSymbolExists.c.o -o cmTC_57b87 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-CWFjLc'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:140 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "fltk/CMake/resources.cmake:290 (check_symbol_exists)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-lDoAHD"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-lDoAHD"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "HAVE_TRUNC"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-lDoAHD'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7156f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_7156f.dir/build.make CMakeFiles/cmTC_7156f.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-lDoAHD'
+        Building C object CMakeFiles/cmTC_7156f.dir/CheckSymbolExists.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_7156f.dir/CheckSymbolExists.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-lDoAHD/CheckSymbolExists.c
+        Linking C executable cmTC_7156f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7156f.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_7156f.dir/CheckSymbolExists.c.o -o cmTC_7156f  -lm 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-lDoAHD'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "fltk/CMake/resources.cmake:297 (try_compile)"
+      - "fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/fltk/CMakeFiles/CMakeTmp"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/fltk/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64 -fno-exceptions"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "V"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/fltk/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_10a9d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_10a9d.dir/build.make CMakeFiles/cmTC_10a9d.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/fltk/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_10a9d.dir/posixScandir.cxx.o
+        /usr/bin/c++   -ffunction-sections -fdata-sections -fPIC -m64 -fno-exceptions  -o CMakeFiles/cmTC_10a9d.dir/posixScandir.cxx.o -c /home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake/posixScandir.cxx
+        Linking CXX executable cmTC_10a9d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_10a9d.dir/link.txt --verbose=1
+        /usr/bin/c++  -ffunction-sections -fdata-sections -fPIC -m64 -fno-exceptions  CMakeFiles/cmTC_10a9d.dir/posixScandir.cxx.o -o cmTC_10a9d 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/fltk/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:682 (check_library_exists)"
+      - "fltk/CMake/options.cmake:401 (include)"
+      - "fltk/CMakeLists.txt:78 (include)"
+    checks:
+      - "Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-tViDlo"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-tViDlo"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "X11_LIB_X11_SOLO"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-tViDlo'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3856d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3856d.dir/build.make CMakeFiles/cmTC_3856d.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-tViDlo'
+        Building C object CMakeFiles/cmTC_3856d.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64 -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_3856d.dir/CheckFunctionExists.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-tViDlo/CheckFunctionExists.c
+        Linking C executable cmTC_3856d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3856d.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64 -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_3856d.dir/CheckFunctionExists.c.o -o cmTC_3856d  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-tViDlo'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:697 (check_function_exists)"
+      - "fltk/CMake/options.cmake:401 (include)"
+      - "fltk/CMakeLists.txt:78 (include)"
+    checks:
+      - "Looking for gethostbyname"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-7U9rtS"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-7U9rtS"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "CMAKE_HAVE_GETHOSTBYNAME"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-7U9rtS'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1c492/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_1c492.dir/build.make CMakeFiles/cmTC_1c492.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-7U9rtS'
+        Building C object CMakeFiles/cmTC_1c492.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64 -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_1c492.dir/CheckFunctionExists.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-7U9rtS/CheckFunctionExists.c
+        Linking C executable cmTC_1c492
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1c492.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64 -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_1c492.dir/CheckFunctionExists.c.o -o cmTC_1c492 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-7U9rtS'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:711 (check_function_exists)"
+      - "fltk/CMake/options.cmake:401 (include)"
+      - "fltk/CMakeLists.txt:78 (include)"
+    checks:
+      - "Looking for connect"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-CksLjO"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-CksLjO"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "CMAKE_HAVE_CONNECT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-CksLjO'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1112f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_1112f.dir/build.make CMakeFiles/cmTC_1112f.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-CksLjO'
+        Building C object CMakeFiles/cmTC_1112f.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64 -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_1112f.dir/CheckFunctionExists.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-CksLjO/CheckFunctionExists.c
+        Linking C executable cmTC_1112f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1112f.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64 -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_1112f.dir/CheckFunctionExists.c.o -o cmTC_1112f 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-CksLjO'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:720 (check_function_exists)"
+      - "fltk/CMake/options.cmake:401 (include)"
+      - "fltk/CMakeLists.txt:78 (include)"
+    checks:
+      - "Looking for remove"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-5QOqVv"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-5QOqVv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "CMAKE_HAVE_REMOVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-5QOqVv'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2b4c5/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_2b4c5.dir/build.make CMakeFiles/cmTC_2b4c5.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-5QOqVv'
+        Building C object CMakeFiles/cmTC_2b4c5.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64 -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_2b4c5.dir/CheckFunctionExists.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-5QOqVv/CheckFunctionExists.c
+        Linking C executable cmTC_2b4c5
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b4c5.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64 -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_2b4c5.dir/CheckFunctionExists.c.o -o cmTC_2b4c5 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-5QOqVv'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:729 (check_function_exists)"
+      - "fltk/CMake/options.cmake:401 (include)"
+      - "fltk/CMakeLists.txt:78 (include)"
+    checks:
+      - "Looking for shmat"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-5gjo4R"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-5gjo4R"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "CMAKE_HAVE_SHMAT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-5gjo4R'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f6282/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f6282.dir/build.make CMakeFiles/cmTC_f6282.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-5gjo4R'
+        Building C object CMakeFiles/cmTC_f6282.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64 -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_f6282.dir/CheckFunctionExists.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-5gjo4R/CheckFunctionExists.c
+        Linking C executable cmTC_f6282
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f6282.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64 -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_f6282.dir/CheckFunctionExists.c.o -o cmTC_f6282 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-5gjo4R'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:739 (check_library_exists)"
+      - "fltk/CMake/options.cmake:401 (include)"
+      - "fltk/CMakeLists.txt:78 (include)"
+    checks:
+      - "Looking for IceConnectionNumber in ICE"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-Mk2ez6"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-Mk2ez6"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "CMAKE_LIB_ICE_HAS_ICECONNECTIONNUMBER"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-Mk2ez6'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d19cc/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d19cc.dir/build.make CMakeFiles/cmTC_d19cc.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-Mk2ez6'
+        Building C object CMakeFiles/cmTC_d19cc.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -ffunction-sections -fdata-sections -fPIC -m64 -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -o CMakeFiles/cmTC_d19cc.dir/CheckFunctionExists.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-Mk2ez6/CheckFunctionExists.c
+        Linking C executable cmTC_d19cc
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d19cc.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64 -DCHECK_FUNCTION_EXISTS=IceConnectionNumber CMakeFiles/cmTC_d19cc.dir/CheckFunctionExists.c.o -o cmTC_d19cc  -lICE 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-Mk2ez6'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/usr/share/cmake-3.28/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "fltk/CMake/options.cmake:747 (include)"
+      - "fltk/CMakeLists.txt:78 (include)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-PuqRGq"
+      binary: "/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-PuqRGq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -fPIC -m64"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/developer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fltk-sys-1.5.10/cfltk/fltk/CMake"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-PuqRGq'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3df06/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3df06.dir/build.make CMakeFiles/cmTC_3df06.dir/build
+        gmake[1]: Entering directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-PuqRGq'
+        Building C object CMakeFiles/cmTC_3df06.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -ffunction-sections -fdata-sections -fPIC -m64  -o CMakeFiles/cmTC_3df06.dir/src.c.o -c /home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-PuqRGq/src.c
+        Linking C executable cmTC_3df06
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3df06.dir/link.txt --verbose=1
+        /usr/bin/cc  -ffunction-sections -fdata-sections -fPIC -m64  CMakeFiles/cmTC_3df06.dir/src.c.o -o cmTC_3df06 
+        gmake[1]: Leaving directory '/home/developer/rust/morse/target/debug/build/fltk-sys-3f6de8dcf7140d04/out/build/CMakeFiles/CMakeScratch/TryCompile-PuqRGq'
+        
+      exitCode: 0
+...
