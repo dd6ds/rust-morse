@@ -1,3 +1,5 @@
+use fltk::enums::Align;
+use fltk::image;
 use fltk::{app, dialog, enums::Shortcut, menu, prelude::*, window::Window, image::PngImage, input::Input, frame::Frame, valuator::Slider, button::Button};
 use once_cell::sync::Lazy;
 use std::{collections::HashMap, thread, time::Duration};
@@ -11,6 +13,11 @@ use std::path::Path;
 use std::fs::File;
 
 const VERSION: &str = env!("CARGO_PKG_VERSION");
+
+const PLAYICON: &str = r#"
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="darkgreen" class="bi bi-file-play-fill" viewBox="0 0 16 16">
+  <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M6 5.883a.5.5 0 0 1 .757-.429l3.528 2.117a.5.5 0 0 1 0 .858l-3.528 2.117a.5.5 0 0 1-.757-.43V5.884z"/>
+</svg>"#;
 
 
 static MORSE_CODE: Lazy<HashMap<char, &str>> = Lazy::new(|| {
@@ -87,6 +94,8 @@ fn main() {
         let catalog = Catalog::parse(f).expect("could not parse the catalog");   
 
         let app = app::App::default();
+        app::get_system_colors();
+
         let mut wind = Window::new(100, 100, 400, 300, catalog.gettext("Morse Code Trainer"));
         // Icon laden (PNG)
         let icon = PngImage::load("icon.png").expect("Icon could not be loaded");
@@ -95,10 +104,19 @@ fn main() {
         let mut input = Input::new(120, 90, 300, 30, "Text:");
         let mut morse_frame = Frame::new(120, 130, 300, 30, "");
 
-        let mut slider = Slider::new(20, 70, 20, 50, "WPM:");
+        let mut slider = Slider::new(30, 110, 20, 50, "WPM: ");
         slider.set_range(5.0, 40.0);
         slider.set_value(25.0);
-        let mut play_btn = Button::new(120, 250, 100, 40, "Play");
+
+        slider.set_tooltip(catalog.gettext("adjust WPM (Words per minute)"));
+
+        slider.set_label(&format!("WPM: {}", slider.value() as i32));
+        slider.redraw();
+
+        let mut play_btn = Button::new(120, 250, 100, 40, catalog.gettext("Play"));
+        play_btn.set_image(Some(image::SvgImage::from_data(PLAYICON).unwrap()));
+        play_btn.set_align(Align::ImageNextToText);
+        
 
 
 
@@ -127,7 +145,7 @@ fn main() {
             },
         );
 
-
+    
 
 
         wind.end();
@@ -135,7 +153,7 @@ fn main() {
 
 
         input.set_trigger(fltk::enums::CallbackTrigger::Changed);
-        input.set_value("CQ CQ CQ DD6DS");
+        input.set_value("CQ CQ CQ");
 
         let update_morse = move |input: &Input, morse_frame: &mut Frame| {
             let morse = text_to_morse(&input.value());
@@ -145,6 +163,7 @@ fn main() {
         let input_c = input.clone();
         let mut morse_frame_c = morse_frame.clone();
         input.set_callback(move |_| update_morse(&input_c, &mut morse_frame_c));
+        input.set_tooltip("Enter the Text you like to hear in Morse Code");
 
         let input_c = input.clone();
         let _morse_frame_c = morse_frame.clone();
@@ -153,7 +172,8 @@ fn main() {
             let wpm = slider.value() as u32;
             thread::spawn(move || play_morse(&morse, wpm));
         });
-
+//        play_btn.set_tooltip("Play Morse Code");
+        play_btn.set_tooltip("Play Morse Code");
         update_morse(&input, &mut morse_frame);    
 
 
