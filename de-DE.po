@@ -50,3 +50,8 @@ msgstr "Sprachdatei: {file_path} existiert!"
 msgid "File: {file_path} does not exist! Program abort"
 msgstr "Datei: {file_path} existiert nicht! Programmabbruch"
 
+msgid "Enter the Text you like to hear in Morse Code"
+msgstr "Geben Sie den Text ein, den Sie im Morsecode hören möchten"
+
+msgid "adjust WPM (Words per minute)"
+msgstr "WPM (Wörter pro Minute) anpassen"
