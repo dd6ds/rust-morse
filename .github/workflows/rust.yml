@@ -20,7 +20,7 @@ jobs:
         sudo apt-get upgrade -y
         sudo apt-get full-upgrade -y
         sudo apt autoremove -y
-        sudo apt-get install -y rust-all libstd-rust-dev librust-alsa-dev librust-udev-dev libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext g++-mingw-w64-i686-win32 g++-mingw-w64-x86-64-win32 lld clang gcc-i686-linux-gnu mingw-w64 clang llvm-dev libxml2-dev uuid-dev libssl-dev bash patch make  tar xz-utils bzip2 gzip sed cpio libbz2-dev cmake libxml2-dev fuse libfuse-dev libmpc-dev librust-bytemuck-derive-dev librust-bytemuck-dev librust-lazy-static-dev librust-winit-dev
+        sudo apt-get install -y rust-all libstd-rust-dev librust-alsa-dev librust-udev-dev libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext g++-mingw-w64-i686-win32 g++-mingw-w64-x86-64-win32 lld clang gcc-i686-linux-gnu mingw-w64 clang llvm-dev libxml2-dev uuid-dev libssl-dev bash patch make  tar xz-utils bzip2 gzip sed cpio libbz2-dev cmake libxml2-dev fuse libfuse-dev libmpc-dev librust-bytemuck-derive-dev librust-bytemuck-dev librust-lazy-static-dev librust-winit-dev librust-bitflags-dev
     - name: show ubuntu version
       run: hostnamectl
     - name: show rustc version
