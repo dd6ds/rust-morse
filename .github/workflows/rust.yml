@@ -11,12 +11,21 @@ env:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
+    - name: Install alsa libs
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y rust-all libstd-rust-dev librust-alsa-dev librust-udev-dev libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext 
+    - name: show rustc version
+      run: rustc --version
     - uses: actions/checkout@v4
     - name: Build
-      run: cargo build --verbose
+      run: cargo build --verbose --release
     - name: Run tests
       run: cargo test --verbose
+    - name: build language files
+      run:  |
+        msgfmt  de-DE.po -o de-DE.mo
+        msgfmt  en-EN.po -o en-EN.mo
