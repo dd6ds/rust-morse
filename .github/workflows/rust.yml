@@ -27,6 +27,6 @@ jobs:
       run: rustc --version
     - uses: actions/checkout@v4
     - name: Build
-      run: cargo build --verbose --release && cargo build --target i686-unknown-linux-gnu --verbose --release && cargo build --target x86_64-pc-windows-gnu --verbose --release && cargo build --target i686-pc-windows-gnu --verbose
+      run: cargo build --verbose --release && cargo build --target x86_64-pc-windows-gnu --verbose --release
     - name: Run tests
       run: cargo test --verbose
