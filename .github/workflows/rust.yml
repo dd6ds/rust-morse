@@ -17,11 +17,16 @@ jobs:
     - name: dependencies
       run: |
         sudo apt-get update
+        sudo apt-get upgrade -y
+        sudo apt-get full-upgrade -y
+        sudo apt autoremove -y
         sudo apt-get install -y rust-all libstd-rust-dev librust-alsa-dev librust-udev-dev libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext g++-mingw-w64-i686-win32 g++-mingw-w64-x86-64-win32 lld clang gcc-i686-linux-gnu
+    - name: show ubuntu version
+      run: hostnamectl
     - name: show rustc version
       run: rustc --version
     - uses: actions/checkout@v4
     - name: Build
-      run: cargo build --verbose --release && cargo build ---target i686-unknown-linux-gnu --verbose --release && cargo build ---target x86_64-pc-windows-gnu --verbose --release
+      run: cargo build --verbose --release && cargo build --target i686-unknown-linux-gnu --verbose --release && cargo build --target x86_64-pc-windows-gnu --verbose --release && cargo build --target i686-pc-windows-gnu --verbose
     - name: Run tests
       run: cargo test --verbose
