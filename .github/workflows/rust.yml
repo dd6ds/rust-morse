@@ -39,6 +39,7 @@ jobs:
               with:
                   command: build
                   args: --release --target=${{ matrix.target }}
+              timeout-minutes: 60
             - name: Build x86_64
               uses: actions-rs/cargo@v1
               if: ${{ matrix.target != 'i686-pc-windows-gnu' && matrix.target != 'i686-unknown-linux-gnu' }}
@@ -47,3 +48,4 @@ jobs:
               with:
                 command: build
                 args: --release --target=${{ matrix.target }}
+              timeout-minutes: 60
