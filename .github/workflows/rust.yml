@@ -25,7 +25,3 @@ jobs:
       run: cargo build --verbose --release
     - name: Run tests
       run: cargo test --verbose
-    - name: build language files
-      run:  |
-        msgfmt  de-DE.po -o de-DE.mo
-        msgfmt  en-EN.po -o en-EN.mo
