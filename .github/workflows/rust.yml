@@ -14,17 +14,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Install alsa libs
+    - name: dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y rust-all libstd-rust-dev librust-alsa-dev librust-udev-dev libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext g++-mingw-w64-i686-win32  g++-mingw-w64-x86-64-win32 lld clang gcc-i686-linux-gnu
+        sudo apt-get install -y rust-all libstd-rust-dev librust-alsa-dev librust-udev-dev libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext g++-mingw-w64-i686-win32 g++-mingw-w64-x86-64-win32 lld clang gcc-i686-linux-gnu
     - name: show rustc version
       run: rustc --version
     - uses: actions/checkout@v4
     - name: Build
-      run: |
-	cargo build --verbose --release
-	cargo build ---target i686-unknown-linux-gnu --verbose --release
-	cargo build ---target x86_64-pc-windows-gnu --verbose --release
+      run: cargo build --verbose --release && cargo build ---target i686-unknown-linux-gnu --verbose --release && cargo build ---target x86_64-pc-windows-gnu --verbose --release
     - name: Run tests
       run: cargo test --verbose
