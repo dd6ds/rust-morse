@@ -1,27 +1,62 @@
-name: Rust
+name: build
 
 on:
+  release:
+    types: [created]
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
-env:
-  CARGO_TERM_COLOR: always
 
 jobs:
-  build:
+  release:
+    name: release ${{ matrix.target }} (with non-required env)
     runs-on: ubuntu-latest
-
+    if: github.event_name == 'release'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: x86_64-pc-windows-gnu
+            archive: zip
+          - target: x86_64-unknown-linux-gnu
+            archive: tar.gz
+          - target: i686-unknown-linux-gnu
+            archive: tar.gz
+          - target: x86_64-apple-darwin
+            archive: zip
+          - target: wasm32-wasi
+            archive: zip tar.gz
     steps:
-    - name: Install alsa libs
+    - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y rust-all libstd-rust-dev librust-alsa-dev librust-udev-dev libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext 
-    - name: show rustc version
-      run: rustc --version
-    - uses: actions/checkout@v4
-    - name: Build
-      run: cargo build --verbose --release
-    - name: Run tests
-      run: cargo test --verbose
+        sudo apt-get install -y rust-all libstd-rust-dev librust-alsa-dev librust-udev-dev libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext g++-mingw-w64-i686-win32  g++-mingw-w64-x86-64-win32 lld clang gcc-i686-linux-gnu
+      - uses: actions/checkout@main
+      - name: Compile and release
+        uses: rust-build/rust-build.action@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          RUSTTARGET: ${{ matrix.target }}
+          EXTRA_FILES: "README.md"
+          SRC_DIR: "hello"
+          ARCHIVE_TYPES: ${{ matrix.archive }}
+          PRE_BUILD: "pre_build.sh"
+          POST_BUILD: "test/post_build.sh"
+          MINIFY: "yes"
+  release_without_not_required:
+    name: release ${{ matrix.target }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        target: [x86_64-unknown-linux-musl]
+    steps:
+      - uses: actions/checkout@main
+      - name: Compile and release
+        uses: rust-build/rust-build.action@main
+        with:
+          RUSTTARGET: ${{ matrix.target }}
+          UPLOAD_MODE: none
+      - name: Checkout output
+        run: ls -laR
+
