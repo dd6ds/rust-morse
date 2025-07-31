@@ -1,34 +1,47 @@
-name: Rust
+on: [push, pull_request, release]
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-env:
-  CARGO_TERM_COLOR: always
+name: Build
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get upgrade -y
-        sudo apt-get full-upgrade -y
-        sudo apt autoremove -y
-        sudo apt-get install -y rust-all libstd-rust-dev librust-alsa-dev librust-udev-dev libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext g++-mingw-w64-i686-win32 g++-mingw-w64-x86-64-win32 lld clang gcc-i686-linux-gnu mingw-w64 clang llvm-dev libxml2-dev uuid-dev libssl-dev bash patch make  tar xz-utils bzip2 gzip sed cpio libbz2-dev cmake libxml2-dev fuse libfuse-dev libmpc-dev librust-bytemuck-derive-dev librust-bytemuck-dev librust-lazy-static-dev librust-winit-dev librust-bitflags-dev
-    - name: show ubuntu version
-      run: hostnamectl
-    - name: show rustc version
-      run: rustc --version
-    - uses: actions/checkout@v4
-    - name: Build linux amd64
-      run: cargo build --verbose --release
-    - name: Build win amd64
-      run: cargo build --verbose --release --target x86_64-pc-windows-gnu
-    - name: Run tests
-      run: cargo test --verbose
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                target:
+                    - i686-pc-windows-gnu
+                    - i686-unknown-linux-gnu
+                    - x86_64-apple-darwin
+                    - x86_64-pc-windows-gnu
+                    - x86_64-unknown-linux-gnu
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions-rs/toolchain@v1
+              with:
+                  toolchain: stable
+                  target: ${{ matrix.target }}
+                  override: true
+            - name: Install x86 Build Dependencies
+              if: ${{ matrix.target == 'i686-pc-windows-gnu' || matrix.target == 'i686-unknown-linux-gnu' }}
+              run: sudo dpkg --add-architecture i386 && sudo apt-get update && sudo apt-get install libssl-dev:i386 clang
+            - name: Install x86_64 Build Dependencies
+              if: ${{ matrix.target != 'i686-pc-windows-gnu' && matrix.target != 'i686-unknown-linux-gnu' }}
+              run: sudo apt-get update && sudo apt-get install pkg-config libssl-dev clang
+            - name: Build x86
+              uses: actions-rs/cargo@v1
+              if: ${{ matrix.target == 'i686-pc-windows-gnu' || matrix.target == 'i686-unknown-linux-gnu' }}
+              env:
+                  TARGET_CC: clang
+                  OPENSSL_LIB_DIR: /usr/lib/i386-linux-gnu/
+                  OPENSSL_INCLUDE_DIR: /usr/include/openssl/
+              with:
+                  command: build
+                  args: --release --target=${{ matrix.target }}
+            - name: Build x86_64
+              uses: actions-rs/cargo@v1
+              if: ${{ matrix.target != 'i686-pc-windows-gnu' && matrix.target != 'i686-unknown-linux-gnu' }}
+              env:
+                TARGET_CC: clang
+              with:
+                command: build
+                args: --release --target=${{ matrix.target }}
