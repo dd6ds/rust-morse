@@ -7,7 +7,7 @@ on:
 
 
 jobs:
-  build:
+  release:
     name: release ${{ matrix.target }} (with non-required env)
     runs-on: ubuntu-latest
     if: github.event_name == 'release'
@@ -25,8 +25,9 @@ jobs:
             archive: zip
           - target: wasm32-wasi
             archive: zip tar.gz
+
     steps:
-    - name: "Install dependencies"
+    - name: dependencies
       run: |
         sudo apt-get update
         sudo apt-get install -y rust-all libstd-rust-dev librust-alsa-dev librust-udev-dev libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext g++-mingw-w64-i686-win32  g++-mingw-w64-x86-64-win32 lld clang gcc-i686-linux-gnu
