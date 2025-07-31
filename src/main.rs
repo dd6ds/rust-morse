@@ -12,6 +12,7 @@ use sys_locale::get_locale;
 use std::path::Path;
 use std::fs::File;
 
+
 const VERSION: &str = env!("CARGO_PKG_VERSION");
 
 const PLAYICON: &str = r#"
@@ -174,6 +175,7 @@ fn main() {
         });
 //        play_btn.set_tooltip("Play Morse Code");
         play_btn.set_tooltip("Play Morse Code");
+
         update_morse(&input, &mut morse_frame);    
 
 
