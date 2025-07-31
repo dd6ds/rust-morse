@@ -25,3 +25,15 @@ jobs:
       run: cargo build --verbose --release
     - name: Run tests
       run: cargo test --verbose
+
+    strategy:
+      matrix:
+        BUILD_TARGET: [release] # refers to a cargo profile
+    outputs:
+      release_built: ${{ steps.set-output.outputs.release_built }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build binaries in "${{ matrix.BUILD_TARGET }}" mode
+        run: cargo build --profile ${{ matrix.BUILD_TARGET }}
+      - name: Run tests in "${{ matrix.BUILD_TARGET }}" mode
+        run: cargo test --profile ${{ matrix.BUILD_TARGET }}
