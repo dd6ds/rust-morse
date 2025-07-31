@@ -23,11 +23,11 @@ jobs:
                   override: true
             - name: Install x86 Build Dependencies
               if: ${{ matrix.target == 'i686-pc-windows-gnu' || matrix.target == 'i686-unknown-linux-gnu' }}
-              run: sudo dpkg --add-architecture i386 && sudo apt-get update && sudo apt-get install libssl-dev:i386 clang pkg-config libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext librust-alsa-dev librust-udev-dev
+              run: sudo dpkg --add-architecture i386 && sudo apt-get update && sudo apt-get install libssl-dev:i386 clang pkg-config libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext librust-alsa-dev librust-udev-dev libfltk1.3-dev libfltk1.3t64
               timeout-minutes: 60
             - name: Install x86_64 Build Dependencies
               if: ${{ matrix.target != 'i686-pc-windows-gnu' && matrix.target != 'i686-unknown-linux-gnu' }}
-              run: sudo apt-get update && sudo apt-get install pkg-config libssl-dev clang libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext librust-alsa-dev librust-udev-dev
+              run: sudo apt-get update && sudo apt-get install pkg-config libssl-dev clang libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext librust-alsa-dev librust-udev-dev libfltk1.3-dev libfltk1.3t64
               timeout-minutes: 60
             - name: Build x86
               uses: actions-rs/cargo@v1
