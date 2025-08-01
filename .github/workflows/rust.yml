@@ -1,8 +1,6 @@
+on: [push, pull_request, release]
+
 name: release
-on:
-  push:
-    tags:
-      - "v*"
 
 jobs:
   release:
