@@ -1,0 +1,51 @@
+on: [push, pull_request, release]
+
+name: Build
+
+jobs:
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                target:
+                    - x86_64-unknown-linux-gnu
+#                    - i686-unknown-linux-gnu
+#                    - i686-pc-windows-gnu
+                    - x86_64-pc-windows-gnu
+#                    - x86_64-apple-darwin
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions-rs/toolchain@v1
+              with:
+                  toolchain: stable
+                  target: ${{ matrix.target }}
+                  override: true
+            - name: Install x86 Build Dependencies
+              if: ${{ matrix.target == 'i686-pc-windows-gnu' || matrix.target == 'i686-unknown-linux-gnu' }}
+              run: sudo dpkg --add-architecture i386 && sudo apt-get update && sudo apt-get install libssl-dev:i386 clang pkg-config libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext librust-alsa-dev librust-udev-dev libfltk1.3-dev libfltk1.3t64 mingw-w64 gcc-multilib curl g++ pkg-config libx11-dev libasound2-dev libudev-dev librust-alsa-sys-dev libstd-rust-dev:i386 libasound2-dev
+              timeout-minutes: 60
+            - name: Install x86_64 Build Dependencies
+              if: ${{ matrix.target != 'i686-pc-windows-gnu' && matrix.target != 'i686-unknown-linux-gnu' }}
+              run: sudo apt-get update && sudo apt-get install pkg-config libssl-dev clang libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext librust-alsa-dev librust-udev-dev libfltk1.3-dev libfltk1.3t64 mingw-w64 gcc-multilib curl g++ pkg-config libx11-dev libasound2-dev libudev-dev librust-alsa-sys-dev libasound2-dev
+              timeout-minutes: 60
+            - name: Build x86
+              uses: actions-rs/cargo@v1
+              if: ${{ matrix.target == 'i686-pc-windows-gnu' || matrix.target == 'i686-unknown-linux-gnu' }}
+              env:
+                  TARGET_CC: clang
+                  OPENSSL_LIB_DIR: /usr/lib/i386-linux-gnu/
+                  OPENSSL_INCLUDE_DIR: /usr/include/openssl/
+              with:
+                  command: build
+                  args: --release --target=${{ matrix.target }}
+              timeout-minutes: 60
+            - name: Build x86_64
+              uses: actions-rs/cargo@v1
+              if: ${{ matrix.target != 'i686-pc-windows-gnu' && matrix.target != 'i686-unknown-linux-gnu' }}
+              env:
+                TARGET_CC: clang
+              with:
+                command: build
+                args: --release --target=${{ matrix.target }}
+              timeout-minutes: 60
