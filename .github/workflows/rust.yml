@@ -62,11 +62,13 @@ jobs:
                 git config --global user.name "dd6ds"
                 git tag -a $TAG -m "Published version $TAG" ${GITHUB_SHA}
                 git push origin $TAG
+                token: ${{ secrets.GITHUB_TOKEN }}
             - name: Cut a new release
               uses: softprops/action-gh-release@v1
               with:
                 files: WebSaver.zip
                 tag_name: ${{ steps.tag.outputs.tag }}
+                token: ${{ secrets.GITHUB_TOKEN }}
 
             - name: Build archive
               shell: bash
