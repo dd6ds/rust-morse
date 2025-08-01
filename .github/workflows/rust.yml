@@ -54,8 +54,8 @@ jobs:
     - name: '📦 Package linux x64'
       run: |
           sudo apt-get update && sudo apt-get install pkg-config libssl-dev clang libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext librust-alsa-dev librust-udev-dev libfltk1.3-dev libfltk1.3t64 mingw-w64 gcc-multilib curl g++ pkg-config libx11-dev libasound2-dev libudev-dev librust-alsa-sys-dev libasound2-dev upx-ucl
-	  echo "find...."
-	  find / -name morse
+          echo "find..."
+          find / -name morse
           ls -lathr
           ls -lathr ~
           ls -lathr ${{github.workspace}}/
