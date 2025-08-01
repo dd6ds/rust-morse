@@ -1,104 +1,34 @@
 on: [push]
 
-      
 jobs:
-    build:
-        name: Build
-        runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                target:
-                    - x86_64-unknown-linux-gnu
-#                    - i686-unknown-linux-gnu
-#                    - i686-pc-windows-gnu
-#                    - x86_64-pc-windows-gnu
-#                    - x86_64-apple-darwin
-        steps:
-            - uses: actions/checkout@v2
-            - uses: actions-rs/toolchain@v1
-              with:
-                  toolchain: stable
-                  target: ${{ matrix.target }}
-                  override: true
+  release:
+    name: Release - ${{ matrix.platform.release_for }}
+    strategy:
+      matrix:
+        platform:
+          - os_name: Linux-x86_64
+            os: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
 
+          - os_name: macOS-x86_64
+            os: macOS-latest
+            target: x86_64-apple-darwin
 
-            - name: Install x86 Build Dependencies
-              if: ${{ matrix.target == 'i686-pc-windows-gnu' || matrix.target == 'i686-unknown-linux-gnu' }}
-              run: sudo dpkg --add-architecture i386 && sudo apt-get update && sudo apt-get install libssl-dev:i386 clang pkg-config libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext librust-alsa-dev librust-udev-dev libfltk1.3-dev libfltk1.3t64 mingw-w64 gcc-multilib curl g++ pkg-config libx11-dev libasound2-dev libudev-dev librust-alsa-sys-dev libstd-rust-dev:i386 libasound2-dev
-              timeout-minutes: 60
+            # more release targets here ...
 
-            - name: Install x86_64 Build Dependencies
-              if: ${{ matrix.target != 'i686-pc-windows-gnu' && matrix.target != 'i686-unknown-linux-gnu' }}
-              run: sudo apt-get update && sudo apt-get install pkg-config libssl-dev clang libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext librust-alsa-dev librust-udev-dev libfltk1.3-dev libfltk1.3t64 mingw-w64 gcc-multilib curl g++ pkg-config libx11-dev libasound2-dev libudev-dev librust-alsa-sys-dev libasound2-dev
-              timeout-minutes: 60
-            - name: Build x86
-              uses: actions-rs/cargo@v1
-              if: ${{ matrix.target == 'i686-pc-windows-gnu' || matrix.target == 'i686-unknown-linux-gnu' }}
-              env:
-                  TARGET_CC: clang
-                  OPENSSL_LIB_DIR: /usr/lib/i386-linux-gnu/
-                  OPENSSL_INCLUDE_DIR: /usr/include/openssl/
-              with:
-                  command: build
-                  args: --release --target=${{ matrix.target }}
-              timeout-minutes: 60
-            - name: Build x86_64
-              uses: actions-rs/cargo@v1
-              if: ${{ matrix.target != 'i686-pc-windows-gnu' && matrix.target != 'i686-unknown-linux-gnu' }}
-              env:
-                TARGET_CC: clang
-              with:
-                command: build
-                args: --release --target=${{ matrix.target }}
-              timeout-minutes: 60
-
-            - name: Tag the repository
-              id: tag
-              run: |
-                # See https://docs.github.com/en/get-started/using-git/dealing-with-special-characters-in-branch-and-tag-names
-                TAG=v$(date -Iseconds | sed 's/[T:\+]/-/g')
-                echo "$TAG"
-                echo "tag=$TAG" >> $GITHUB_OUTPUT
-                git config --global user.email "dd6ds@eclipso.de"
-                git config --global user.name "dd6ds"
-                git tag -a $TAG -m "Published version $TAG" ${GITHUB_SHA}
-                git push origin $TAG
-            - name: Cut a new release
-              uses: softprops/action-gh-release@v1
-              with:
-                files: icon.png
-                tag_name: ${{ steps.tag.outputs.tag }}
-                token: ${{ secrets.GITHUB_TOKEN }}
-
-            - name: Checkout repository
-              uses: actions/checkout@v2
-              with:
-                repository: Org/Repo
-                token: ${{ secrets.SECRET_PAT }}    
-
-            - name: Build archive
-              shell: bash
-              run: |
-                # Replace with the name of your binary
-                binary_name="morse"
-                      dirname="$binary_name-${{ env.VERSION }}-${{ matrix.target }}"
-                mkdir "$dirname"
-                if [ "${{ matrix.os }}" = "windows-latest" ]; then
-                  mv "target/${{ matrix.target }}/release/$binary_name.exe" "$dirname"
-                else
-                  mv "target/${{ matrix.target }}/release/$binary_name" "$dirname"
-                fi
-
-                if [ "${{ matrix.os }}" = "windows-latest" ]; then
-                  7z a "$dirname.zip" "$dirname"
-                  echo "ASSET=$dirname.zip" >> $GITHUB_ENV
-                else
-                  tar -czf "$dirname.tar.gz" "$dirname"
-                  echo "ASSET=$dirname.tar.gz" >> $GITHUB_ENV
-                fi
-
-            - name: Release
-              uses: softprops/action-gh-release@v1
-              with:
-                files: |
-                  ${{ env.ASSET }}
+    runs-on: ${{ matrix.platform.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Build executable
+        uses: houseabsolute/actions-rust-cross@v0
+        with:
+          target: ${{ matrix.platform.target }}
+          args: "--locked --release"
+          strip: true
+      - name: Publish artifacts and release
+        uses: houseabsolute/actions-rust-release@v0
+        with:
+          executable-name: ubi
+          target: ${{ matrix.platform.target }}
+        if: matrix.toolchain == 'stable'
