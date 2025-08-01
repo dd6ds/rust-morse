@@ -20,6 +20,7 @@ jobs:
               with:
                   toolchain: stable
                   target: ${{ matrix.target }}
+		  tar: unix
                   override: true
             - name: Install x86 Build Dependencies
               if: ${{ matrix.target == 'i686-pc-windows-gnu' || matrix.target == 'i686-unknown-linux-gnu' }}
@@ -48,5 +49,4 @@ jobs:
               with:
                 command: build
                 args: --release --target=${{ matrix.target }}
-	        tar: unix
               timeout-minutes: 60
