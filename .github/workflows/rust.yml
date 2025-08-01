@@ -1,5 +1,7 @@
 on: [push, pull_request, release]
-
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
+      
 name: Build
 
 jobs:
@@ -22,11 +24,6 @@ jobs:
                   target: ${{ matrix.target }}
                   override: true
 
-            - name: Tag
-              if: startsWith(github.ref, 'refs/heads/release/')
-              run: |
-                git tag "v$env:GitVersion_SemVer"
-                git push origin "v$env:GitVersion_SemVer"
 
             - name: Install x86 Build Dependencies
               if: ${{ matrix.target == 'i686-pc-windows-gnu' || matrix.target == 'i686-unknown-linux-gnu' }}
