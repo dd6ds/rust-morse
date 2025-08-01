@@ -27,7 +27,6 @@ jobs:
     steps:
       - name: Clone test repository
         uses: actions/checkout@v2
-        name: build the ${{ matrix.name }}
         with:
           rust_target: ${{ matrix.target }}
           archive_suffix: ${{ matrix.suffix }}
