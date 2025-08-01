@@ -21,12 +21,12 @@ jobs:
                   toolchain: stable
                   target: ${{ matrix.target }}
                   override: true
-          - name: Tag
-            if: startsWith(github.ref, 'refs/heads/release/')
-            run: |
-              git tag "v$env:GitVersion_SemVer"
-              git push origin "v$env:GitVersion_SemVer"
-            - name: Install x86 Build Dependencies
+            - name: Tag
+              if: startsWith(github.ref, 'refs/heads/release/')
+              run: |
+                git tag "v$env:GitVersion_SemVer"
+                git push origin "v$env:GitVersion_SemVer"
+              - name: Install x86 Build Dependencies
               if: ${{ matrix.target == 'i686-pc-windows-gnu' || matrix.target == 'i686-unknown-linux-gnu' }}
               run: sudo dpkg --add-architecture i386 && sudo apt-get update && sudo apt-get install libssl-dev:i386 clang pkg-config libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext librust-alsa-dev librust-udev-dev libfltk1.3-dev libfltk1.3t64 mingw-w64 gcc-multilib curl g++ pkg-config libx11-dev libasound2-dev libudev-dev librust-alsa-sys-dev libstd-rust-dev:i386 libasound2-dev
               timeout-minutes: 60
