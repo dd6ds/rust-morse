@@ -58,10 +58,10 @@ jobs:
     
     - name: '📦 Package linux x64'
       run: |
-      cd ${{github.workspace}}
-      upx --best target/release/morse
-      zip -r morse-linux-x64.zip target/release/morse icon.png de-DE.mo en-EN.mo license.txt -j
-      gh release upload ${{github.event.release.tag_name}} morse-linux-x64.zip
+          cd ${{github.workspace}}
+          upx --best target/release/morse
+          zip -r morse-linux-x64.zip target/release/morse icon.png de-DE.mo en-EN.mo license.txt -j
+          gh release upload ${{github.event.release.tag_name}} morse-linux-x64.zip
       env:
         GITHUB_TOKEN: ${{ github.TOKEN }}
         shell: bash
