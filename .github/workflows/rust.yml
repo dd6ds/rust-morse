@@ -1,7 +1,5 @@
 on: [push]
       
-name: Build
-
 jobs:
     build:
         name: Build
