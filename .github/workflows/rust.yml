@@ -71,6 +71,12 @@ jobs:
                 tag_name: ${{ steps.tag.outputs.tag }}
                 token: ${{ secrets.GITHUB_TOKEN }}
 
+            - name: Checkout repository
+              uses: actions/checkout@v2
+              with:
+                repository: Org/Repo
+                token: ${{ secrets.SECRET_PAT }}    
+
             - name: Build archive
               shell: bash
               run: |
