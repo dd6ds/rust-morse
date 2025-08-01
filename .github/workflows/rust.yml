@@ -49,7 +49,6 @@ jobs:
         CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
       run: |
         echo "Releasing a version..."
-#        cargo release --execute
         cargo build --release
 
     - name: '📦 Package linux x64'
