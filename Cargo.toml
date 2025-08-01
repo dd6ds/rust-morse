@@ -1,6 +1,6 @@
 [package]
 name = "morse"
-version = "0.1.0"
+version = "0.1.0a"
 edition = "2024"
 authors = ["Dennis Schneck", "dd6ds@eclipso.de"]
 
