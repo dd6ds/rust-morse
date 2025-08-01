@@ -48,6 +48,5 @@ jobs:
               with:
                 command: build
                 args: --release --target=${{ matrix.target }}
+	        tar: unix
               timeout-minutes: 60
-	      tar: unix
-              zip: windows
