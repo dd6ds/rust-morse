@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@master
+        uses: actions/checkout@main
       - name: Create Release
         uses: actions/create-release@latest
         env:
@@ -42,8 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clone test repository
-        uses: actions/checkout@v2
-      - uses: xhaiker/rust-release.action@v1.0.0
+        uses: actions/checkout@v4
         name: build ${{ matrix.name }}
         with:
           release: ${{ github.ref_name }}
