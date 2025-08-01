@@ -3,7 +3,10 @@ name = "morse"
 version = "0.0.1"
 edition = "2024"
 authors = ["Dennis Schneck", "dd6ds@eclipso.de"]
-
+license = "MIT"
+license-file = "license.txt"
+description = "A little Morse Program"
+repository = "https://github.com/dd6ds/rust-morse/"
 
 [dependencies]
 compile-time = "0.2.0"
