@@ -35,5 +35,8 @@ jobs:
         ls -lathr /home/runner/work/rust-morse/rust-morse/target/release
         cd ${{github.workspace}}
         zip -r morse-linux-x64.zip /home/runner/work/rust-morse/rust-morse/target/release/morse /home/runner/work/rust-morse/rust-morse/icon.png /home/runner/work/rust-morse/rust-morse/de-DE.mo /home/runner/work/rust-morse/rust-morse/en-EN.mo /home/runner/work/rust-morse/rust-morse/license.txt -j
+    - name: Upload
+	gh release upload --help
+        ls -lathr ~
         gh release upload ${{github.event.release.tag_name}} morse-linux-x64.zip
 
