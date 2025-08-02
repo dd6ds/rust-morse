@@ -40,5 +40,5 @@ jobs:
       env:
         GH_TOKEN: ${{ github.token }}
       run: |
-        la -lathr /home/runner/work/rust-morse/rust-morse/morse-linux-x64.zip
+        ls -lathr /home/runner/work/rust-morse/rust-morse/morse-linux-x64.zip
         gh release upload 0.0.1 /home/runner/work/rust-morse/rust-morse/morse-linux-x64.zip
