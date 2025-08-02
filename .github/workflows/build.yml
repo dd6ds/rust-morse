@@ -38,4 +38,5 @@ jobs:
     - name: Upload
 	gh release upload --help
         ls -lathr ~
+        find . -name morse-linux-x64.zip
         gh release upload ${{github.event.release.tag_name}} morse-linux-x64.zip
