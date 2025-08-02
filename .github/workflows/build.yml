@@ -42,8 +42,9 @@ jobs:
       run: |
         ls -lathr /home/runner/work/rust-morse/rust-morse/morse-linux-x64.zip
 #        gh release upload 0.0.1 /home/runner/work/rust-morse/rust-morse/morse-linux-x64.zip
-
-    - name: Publish
+    - name: Release
       env:
         CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
-      run: cargo publish
+      run: |
+        echo "Releasing a version..."
+        cargo release --execute
