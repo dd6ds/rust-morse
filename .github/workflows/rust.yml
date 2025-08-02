@@ -13,29 +13,6 @@ jobs:
       matrix:
         target: [x86_64-pc-windows-gnu, x86_64-unknown-linux-musl]
     steps:
-      - uses: actions/checkout@master
-      - name: Compile and release
-        uses: rust-build/rust-build.action@v1.4.5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          RUSTTARGET: ${{ matrix.target }}
-          EXTRA_FILES: "README.md LICENSE"
-# .github/workflows/release.yml
-
-on:
-  release:
-    types: [created]
-
-jobs:
-  release:
-    name: release ${{ matrix.target }}
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        target: [x86_64-pc-windows-gnu, x86_64-unknown-linux-musl]
-    steps:
       - name: install deps
         run: sudo apt-get update && sudo apt-get install pkg-config libssl-dev clang libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext librust-alsa-dev librust-udev-dev libfltk1.3-dev libfltk1.3t64 mingw-w64 gcc-multilib curl g++ pkg-config libx11-dev libasound2-dev libudev-dev librust-alsa-sys-dev libasound2-dev upx-ucl    
       - uses: actions/checkout@master
