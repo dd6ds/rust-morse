@@ -34,6 +34,7 @@ jobs:
       run:  |
         ls -lathr /home/runner/work/rust-morse/rust-morse/target/release
         cd ${{github.workspace}}
+        pwd
         zip -r morse-linux-x64.zip /home/runner/work/rust-morse/rust-morse/target/release/morse /home/runner/work/rust-morse/rust-morse/icon.png /home/runner/work/rust-morse/rust-morse/de-DE.mo /home/runner/work/rust-morse/rust-morse/en-EN.mo /home/runner/work/rust-morse/rust-morse/license.txt -j
     - name: Upload
       env:
@@ -45,3 +46,4 @@ jobs:
         ls -lathr /morse-linux-x64.zip
         ls -lathr ~/morse-linux-x64.zip
         gh release upload 0.0.1 /morse-linux-x64.zip
+        pwd
