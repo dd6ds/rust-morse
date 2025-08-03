@@ -106,7 +106,7 @@ fn main() {
         let mut morse_frame = Frame::new(120, 130, 300, 30, "");
 
         let mut slider = Slider::new(30, 110, 20, 50, "WPM: ");
-        slider.set_range(5.0, 40.0);
+        slider.set_range(5.0, 60.0);
         slider.set_value(25.0);
 
         slider.set_tooltip(catalog.gettext("adjust WPM (Words per minute)"));
