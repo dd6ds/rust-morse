@@ -19,20 +19,20 @@ jobs:
         include:
           - target: x86_64-pc-windows-gnu
             archive: zip
-          - target: i686-pc-windows-gnu
-            archive: zip
-          - target: aarch64-pc-windows-gnullvm
-            archive: zip
-          - target: x86_64-unknown-linux-musl
-            archive: tar.gz tar.xz tar.zst
-          - target: i686-linux-gnu-gcc
-            archive: tar.gz tar.xz tar.zst
+#          - target: i686-pc-windows-gnu
+#            archive: zip
+#          - target: aarch64-pc-windows-gnullvm
+#            archive: zip
+#          - target: x86_64-unknown-linux-musl
+#            archive: tar.gz tar.xz tar.zst
+#          - target: i686-linux-gnu-gcc
+#            archive: tar.gz tar.xz tar.zst
           - target: x86_64-unknown-linux-gnu
             archive: tar.gz tar.xz tar.zst
-          - target: x86_64-apple-darwin
-            archive: zip
-          - target: aarch64-apple-darwin
-            archive: zip
+#          - target: x86_64-apple-darwin
+#            archive: zip
+#          - target: aarch64-apple-darwin
+#            archive: zip
 
     steps:
     - name: install deps
@@ -57,7 +57,13 @@ jobs:
         ls -lathr /home/runner/work/rust-morse/rust-morse/target/release
         cd ${{github.workspace}}
         pwd
-        zip -r morse-linux-x64.zip /home/runner/work/rust-morse/rust-morse/target/release/morse /home/runner/work/rust-morse/rust-morse/icon.png /home/runner/work/rust-morse/rust-morse/de-DE.mo /home/runner/work/rust-morse/rust-morse/en-EN.mo /home/runner/work/rust-morse/rust-morse/license.txt -j
+        if target == x86_64-unknown-linux-gnu {
+          zip -r morse-linux-x64.zip /home/runner/work/rust-morse/rust-morse/target/release/morse /home/runner/work/rust-morse/rust-morse/icon.png /home/runner/work/rust-morse/rust-morse/de-DE.mo /home/runner/work/rust-morse/rust-morse/en-EN.mo /home/runner/work/rust-morse/rust-morse/license.txt -j
+        }
+        if target == x86_64-pc-windows-gnu {
+          zip -r morse-linux-x64.zip /home/runner/work/rust-morse/rust-morse/target/x86_64-pc-windows-gnu/release/morse.exe /home/runner/work/rust-morse/rust-morse/icon.png /home/runner/work/rust-morse/rust-morse/de-DE.mo /home/runner/work/rust-morse/rust-morse/en-EN.mo /home/runner/work/rust-morse/rust-morse/license.txt -j
+        }
+
     - name: Upload
       env:
         GH_TOKEN: ${{ github.token }}
