@@ -55,3 +55,7 @@ msgstr "Geben Sie den Text ein, den Sie im Morsecode hören möchten"
 
 msgid "adjust WPM (Words per minute)"
 msgstr "WPM (Wörter pro Minute) anpassen"
+
+msgid "Play Morse Code"
+msgstr "Morse Code abspielen"
+

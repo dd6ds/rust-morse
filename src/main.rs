@@ -103,19 +103,25 @@ fn main() {
         wind.set_icon(Some(icon));
 
         let mut input = Input::new(120, 90, 300, 30, "Text:");
+        input.set_tooltip(catalog.gettext("Enter the Text you like to hear in Morse Code"));
+
         let mut morse_frame = Frame::new(120, 130, 300, 30, "");
 
-        let mut slider = Slider::new(30, 110, 20, 50, "WPM: ");
+//        let mut slider = Slider::new(30, 110, 20, 50, "WPM: ");
+        let mut slider = Slider::new(30, 110, 20, 50, "");
+
+        // Set WPM Range
         slider.set_range(5.0, 60.0);
+        // Set WPN default value
         slider.set_value(25.0);
 
         slider.set_tooltip(catalog.gettext("adjust WPM (Words per minute)"));
 
         slider.set_label(&format!("WPM: {}", slider.value() as i32));
-        slider.redraw();
+//        slider.redraw();
  
 
-        // Update WPN label when slider moved
+        // Update WPM label when slider moved
         slider.set_callback(move |s| {
             let value = s.value() as i32;
             s.set_label(&format!("WPM: {}", value));
@@ -124,6 +130,7 @@ fn main() {
         let mut play_btn = Button::new(120, 250, 100, 40, catalog.gettext("Play"));
         play_btn.set_image(Some(image::SvgImage::from_data(PLAYICON).unwrap()));
         play_btn.set_align(Align::ImageNextToText);
+        play_btn.set_tooltip(catalog.gettext("Play Morse Code"));
         
 
 
@@ -146,7 +153,7 @@ fn main() {
             menu::MenuFlag::Normal,
             move |_| {
                 let about_msg = format!(
-                    "\n{} {VERSION}, \nPlatform: {CURRENT_PLATFORM} \nCompiled on: {COMPILED_ON} \nRust Version: {rustc_version} \nComplied at {compile_datetime} \nAutor: dd6ds", catalog.gettext("Morse Code Trainer\n\nVersion: "),
+                    "\n{} {VERSION}, \nPlatform: {CURRENT_PLATFORM} \nCompiled on: {COMPILED_ON} \nRustc Version: {rustc_version} \nComplied at {compile_datetime} \nAutor: dd6ds \nURL: https://github.com/dd6ds/rust-morse/releases", catalog.gettext("Morse Code Trainer\n\nVersion: "),
 
             );
                 dialog::message_default(&about_msg);
@@ -169,10 +176,10 @@ fn main() {
         };
 
         let input_c = input.clone();
+
         let mut morse_frame_c = morse_frame.clone();
         input.set_callback(move |_| update_morse(&input_c, &mut morse_frame_c));
-        input.set_tooltip("Enter the Text you like to hear in Morse Code");
-
+ 
         let input_c = input.clone();
         let _morse_frame_c = morse_frame.clone();
         play_btn.set_callback(move |_| {
@@ -180,8 +187,6 @@ fn main() {
             let wpm = slider.value() as u32;
             thread::spawn(move || play_morse(&morse, wpm));
         });
-//        play_btn.set_tooltip("Play Morse Code");
-        play_btn.set_tooltip("Play Morse Code");
 
         update_morse(&input, &mut morse_frame);    
 
