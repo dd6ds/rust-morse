@@ -113,13 +113,6 @@ fn main() {
 
         slider.set_label(&format!("WPM: {}", slider.value() as i32));
         slider.redraw();
- 
-
-        // Update WPN label when slider moved
-        slider.set_callback(move |s| {
-            let value = s.value() as i32;
-            s.set_label(&format!("WPM: {}", value));
-        });
 
         let mut play_btn = Button::new(120, 250, 100, 40, catalog.gettext("Play"));
         play_btn.set_image(Some(image::SvgImage::from_data(PLAYICON).unwrap()));
