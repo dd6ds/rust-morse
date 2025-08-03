@@ -95,7 +95,6 @@ jobs:
       - name: Upload release asset
         uses: actions/upload-release-asset@v1
         skipIfReleaseExists:
-        description: "When skipIfReleaseExists is enabled the action will be skipped if a non-draft release already exists for the provided tag."
         required: true
         default: 'false'
         env:
