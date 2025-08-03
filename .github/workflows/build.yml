@@ -103,7 +103,7 @@ jobs:
           asset_path: ./morse-x86_64-unknown-linux-gnu.tar.gz
           asset_name: morse-x86_64-unknown-linux-gnu.tar.gz
           asset_content_type: application/octet-stream
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
