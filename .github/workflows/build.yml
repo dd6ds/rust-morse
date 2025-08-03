@@ -1,8 +1,11 @@
-name: Build and Release Rust Multi-Target
+name: morse build
 
 on:
-  release:
-    types: [created]
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
 
 jobs:
   build:
