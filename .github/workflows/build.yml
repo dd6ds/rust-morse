@@ -1,78 +1,86 @@
-name: morse build
+name: Build and Release Rust Multi-Target
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-env:
-  CARGO_TERM_COLOR: always
+  release:
+    types: [created]
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    # Setzt je nach Ziel das passende OS-Image für optimales Cross-Compiling
     strategy:
       fail-fast: false
       matrix:
         include:
           - target: x86_64-pc-windows-gnu
+            os: ubuntu-latest
             archive: zip
-#          - target: i686-pc-windows-gnu
-#            archive: zip
-#          - target: aarch64-pc-windows-gnullvm
-#            archive: zip
-#          - target: x86_64-unknown-linux-musl
-#            archive: tar.gz tar.xz tar.zst
-#          - target: i686-linux-gnu-gcc
-#            archive: tar.gz tar.xz tar.zst
+          - target: i686-pc-windows-gnu
+            os: ubuntu-latest
+            archive: zip
           - target: x86_64-unknown-linux-gnu
-            archive: tar.gz tar.xz tar.zst
-#          - target: x86_64-apple-darwin
-#            archive: zip
-#          - target: aarch64-apple-darwin
-#            archive: zip
+            os: ubuntu-latest
+            archive: tar.gz
+          - target: i686-unknown-linux-gnu
+            os: ubuntu-latest
+            archive: tar.gz
+          - target: x86_64-apple-darwin
+            os: macos-latest
+            archive: tar.gz
+          - target: aarch64-apple-darwin
+            os: macos-latest
+            archive: tar.gz
+
+    runs-on: ${{ matrix.os }}
 
     steps:
-    - name: install deps
-      run: sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get full-upgrade -y && sudo apt-get install pkg-config libssl-dev clang libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext librust-alsa-dev librust-udev-dev libfltk1.3-dev libfltk1.3t64 mingw-w64 gcc-multilib curl g++ pkg-config libx11-dev libasound2-dev libudev-dev librust-alsa-sys-dev libasound2-dev upx-ucl      
-    - uses: actions/checkout@v4
-    - name: rustup update
-      run: rustup up
-    - name: install cargo release
-      run: cargo install cargo-release
-    - name: Build
-      run: cargo build --verbose --release
-    - name: Run tests
-      run: cargo test --verbose
-    - name: cargo doc
-      run: cargo doc
-    - name: cargo release
-      env:
-        CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
-      run: cargo release --execute
-    - name: zip
-      run:  |
-        ls -lathr /home/runner/work/rust-morse/rust-morse/target/release
-        cd ${{github.workspace}}
-        pwd
-        if target == x86_64-unknown-linux-gnu {
-          zip -r morse-linux-x64.zip /home/runner/work/rust-morse/rust-morse/target/release/morse /home/runner/work/rust-morse/rust-morse/icon.png /home/runner/work/rust-morse/rust-morse/de-DE.mo /home/runner/work/rust-morse/rust-morse/en-EN.mo /home/runner/work/rust-morse/rust-morse/license.txt -j
-        }
-        if target == x86_64-pc-windows-gnu {
-          zip -r morse-linux-x64.zip /home/runner/work/rust-morse/rust-morse/target/x86_64-pc-windows-gnu/release/morse.exe /home/runner/work/rust-morse/rust-morse/icon.png /home/runner/work/rust-morse/rust-morse/de-DE.mo /home/runner/work/rust-morse/rust-morse/en-EN.mo /home/runner/work/rust-morse/rust-morse/license.txt -j
-        }
+      - name: Checkout source
+        uses: actions/checkout@v3
 
-    - name: Upload
-      env:
-        GH_TOKEN: ${{ github.token }}
-      run: |
-        ls -lathr /home/runner/work/rust-morse/rust-morse/morse-linux-x64.zip
-#        gh release upload 0.0.1 /home/runner/work/rust-morse/rust-morse/morse-linux-x64.zip
-    - name: Release
-      env:
-        CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
-      run: |
-        echo "Releasing a version..."
-        cargo release --execute
+      # Für Linux (auch Windows GNU Cross-Compilation auf Linux Runner) native Build-Tools installieren
+      - name: Install dependencies for Linux builds
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential gcc-multilib g++-multilib
+
+      # Für macOS keine zusätzlichen Schritte nötig, GitHub Runner hat Xcode etc. vorinstalliert
+
+      - name: Setup Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          target: ${{ matrix.target }}
+          override: true
+
+      - name: Build release binary
+        run: cargo build --release --target ${{ matrix.target }}
+
+      - name: Prepare release directory and archive
+        run: |
+          mkdir -p release
+          binary_name="morse" # Ersetze durch den tatsächlichen Binary-Namen aus Cargo.toml [package] name
+          ext=""
+          if [[ "${{ matrix.target }}" == *windows* ]]; then
+            ext=".exe"
+          fi
+          binary_path="target/${{ matrix.target }}/release/${binary_name}${ext}"
+          cp "$binary_path" release/
+          
+          cd release
+          if [[ "${{ matrix.archive }}" == "zip" ]]; then
+            zip -r "../${binary_name}-${{ matrix.target }}.zip" "${binary_name}${ext}"
+          else
+            tar czf "../${binary_name}-${{ matrix.target }}.tar.gz" "${binary_name}${ext}"
+          fi
+          cd ..
+
+      - name: Upload release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./morse-${{ matrix.target }}.${{ matrix.archive }}
+          asset_name: morse-${{ matrix.target }}.${{ matrix.archive }}
+          asset_content_type: application/octet-stream
