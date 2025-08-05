@@ -28,7 +28,7 @@ jobs:
         run: cargo build --release --target x86_64-apple-darwin
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: x86_64-apple-darwin-binary
           path: target/x86_64-apple-darwin/release/
