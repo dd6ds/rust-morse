@@ -1,10 +1,11 @@
-name: Build & Upload Release (aarch-apple-darwin)
+name: aarch-apple-darwin
 
 on:
   push:
     branches:
       - main
   pull_request:
+
 
 jobs:
   build-and-upload:
