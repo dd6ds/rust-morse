@@ -23,7 +23,7 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@users.noreply.github.com"
           git tag "v${{ steps.get_version.outputs.cargo_version }}"
-          git push origin "v${{ steps.get_version.outputs.cargo_version }}"
+          git push --force origin v${{ steps.get_version.outputs.cargo_version }}
 
       - name: Create GitHub Release
         id: create_release
