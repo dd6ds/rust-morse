@@ -14,7 +14,7 @@ jobs:
 
       - name: Zip source code
         run: |
-          zip -r source-code.zip . -x "*.git*"   # Exclude git files
+          zip -r source-code.zip . -x "*.git*" "*.mo"   # Exclude git files
 
       - name: Create GitHub Release and Upload Source ZIP
         uses: softprops/action-gh-release@v1
