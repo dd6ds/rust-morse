@@ -113,8 +113,7 @@ jobs:
         release_name: Release ${{ github.ref_name }}
         draft: false
         prerelease: false
-        allow_update: true
-
+  
 
 
     - name: Upload Release Asset
@@ -126,3 +125,4 @@ jobs:
         asset_path: release/morse_linux-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip
         asset_name: morse_linuxx86_64-v${{ steps.get_version.outputs.cargo_version }}.zip
         asset_content_type: application/zip
+

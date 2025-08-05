@@ -1,5 +1,6 @@
 name: Windows i686 Binary Release
 
+
 on:
   push:
     branches:
@@ -114,7 +115,6 @@ jobs:
         release_name: Release ${{ github.ref_name }}
         draft: false
         prerelease: false
-        allow_update: true
 
 
     - name: Upload Release Asset

@@ -114,8 +114,7 @@ jobs:
         release_name: Release ${{ github.ref_name }}
         draft: false
         prerelease: false
-        allow_update: true
-
+ 
 
     - name: Upload Release Asset
       uses: actions/upload-release-asset@v1
@@ -126,3 +125,4 @@ jobs:
         asset_path: release/morse_windows-i686-v${{ steps.get_version.outputs.cargo_version }}.zip
         asset_name: morse_windows-i686-v${{ steps.get_version.outputs.cargo_version }}.zip
         asset_content_type: application/zip
+
