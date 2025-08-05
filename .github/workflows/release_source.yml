@@ -1,33 +1,44 @@
-name: Release Source Code
+name: Release
 
 on:
   push:
-    branches: [ "main" ]
-    tags:
-     - "*.*.*"
-  pull_request:
-    branches: [ "main" ]
-    tags:
-     - "*.*.*"
-
+    branches:
+      - main
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Zip source code
+      - name: Get version from Cargo.toml
+        id: get_version
         run: |
-          zip -r source-code.zip . -x "*.git*"   # Exclude git files
-        with:
-          tags: ${{ steps.meta.outputs.tags }}
+          version=$(grep '^version' Cargo.toml | head -n 1 | sed 's/version = "\(.*\)"/\1/')
+          echo "cargo_version=$version" >> $GITHUB_OUTPUT
 
-      - name: Create GitHub Release and Upload Source ZIP
-        uses: softprops/action-gh-release@v1
+      - name: Create git tag
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@users.noreply.github.com"
+          git tag "v${{ steps.get_version.outputs.cargo_version }}"
+          git push origin "v${{ steps.get_version.outputs.cargo_version }}"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
         with:
-          tags: ${{ steps.meta.outputs.tags }}
-          files: source-code.zip
+          tag_name: "v${{ steps.get_version.outputs.cargo_version }}"
+          name: "Release v${{ steps.get_version.outputs.cargo_version }}"
+          draft: false
+          prerelease: false
+
+      - name: Upload source code as artifact
+        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./ # You can zip your source and upload it
+          asset_name: "rust-morse-v${{ steps.get_version.outputs.cargo_version }}.zip"
+          asset_content_type: application/zip
