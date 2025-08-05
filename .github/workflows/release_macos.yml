@@ -3,7 +3,7 @@ name: Build x86_64-apple-darwin
 on:
   push:
     branches:
-      - main
+      - osx-x86_64
   pull_request:
 
 jobs:

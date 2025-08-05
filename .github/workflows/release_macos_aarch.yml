@@ -3,7 +3,7 @@ name: aarch-apple-darwin
 on:
   push:
     branches:
-      - main
+      - osx-aarch
   pull_request:
 
 
