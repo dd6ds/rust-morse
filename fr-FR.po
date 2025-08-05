@@ -1,0 +1,61 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Morse Code Trainer\n"
+"Language: de\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#: main.rs
+msgid "Morse Code Trainer"
+msgstr "Entraîneur de code Morse"
+
+#: main.rs
+msgid "Text:"
+msgstr "Texte:"
+
+#: main.rs
+msgid "Play"
+msgstr "Jouer"
+
+#: main.rs
+msgid "WPM:"
+msgstr "WPM:"
+
+#: main.rs
+msgid "File/Quit\t"
+msgstr "Fichier/Quitter_t"
+
+#: main.rs
+msgid "Info/About"
+msgstr "Infos/À propos"
+
+#: main.rs
+msgid "Morse Code Trainer\n\nVersion: "
+msgstr "Morsecode-Trainer\n\nVersion: "
+
+#: main.rs
+msgid ""
+"\n{} {VERSION}, \nPlatform: {CURRENT_PLATFORM} \nCompiled on: {COMPILED_ON} \nRust Version: {rustc_version} \nComplied at {compile_datetime}"
+msgstr ""
+"\n{} {VERSION}, \nPlattform: {CURRENT_PLATFORM} \nKompiliert am: {COMPILED_ON} \nRust-Version: {rustc_version} \nKompiliert am {compile_datetime}"
+
+#: main.rs
+msgid "Icon could not be loaded"
+msgstr "L'icône n'a pas pu être chargée"
+
+#: main.rs
+msgid "LanguageFile: {file_path} exists!"
+msgstr "LanguageFile : {file_path} existe !"
+
+#: main.rs
+msgid "File: {file_path} does not exist! Program abort"
+msgstr "Fichier : {file_path} n'existe pas ! Interruption du programme"
+
+msgid "Enter the Text you like to hear in Morse Code"
+msgstr "Entrez le texte que vous souhaitez entendre en code Morse"
+
+msgid "adjust WPM (Words per minute)"
+msgstr "Ajuster les WPM (mots par minute)"
+
+msgid "Play Morse Code"
+msgstr "Jouer au code Morse"
+
