@@ -3,7 +3,13 @@ name: Release Source Code
 on:
   push:
     tags:
-      - 'v*'   # Triggers on tags like v1.0.0
+      - 'v*'    # Trigger on version tags
+    branches: [ "main" ]
+  pull_request:
+    tags:
+      - 'v*'    # Trigger on version tags
+    branches: [ "main" ]
+
 
 jobs:
   release:
@@ -14,7 +20,7 @@ jobs:
 
       - name: Zip source code
         run: |
-          zip -r source-code.zip . -x "*.git*" "*.mo"   # Exclude git files
+          zip -r source-code.zip . -x "*.git*"   # Exclude git files
 
       - name: Create GitHub Release and Upload Source ZIP
         uses: softprops/action-gh-release@v1
