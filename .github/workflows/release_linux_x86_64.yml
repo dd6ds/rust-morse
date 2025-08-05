@@ -69,6 +69,24 @@ jobs:
 
         ASSET_ID=$(gh api \
           repos/${{ github.repository }}/releases/tags/${{ github.ref_name }} \
+          | jq '.assets[] | select(.name == "main.zip") | .id')
+        if [ -n "$ASSET_ID" ]; then
+          gh api --method DELETE \
+            /repos/${{ github.repository }}/releases/assets/$ASSET_ID
+        fi
+
+
+        ASSET_ID=$(gh api \
+          repos/${{ github.repository }}/releases/tags/${{ github.ref_name }} \
+          | jq '.assets[] | select(.name == "main.tar.gz") | .id')
+        if [ -n "$ASSET_ID" ]; then
+          gh api --method DELETE \
+            /repos/${{ github.repository }}/releases/assets/$ASSET_ID
+        fi
+
+
+        ASSET_ID=$(gh api \
+          repos/${{ github.repository }}/releases/tags/${{ github.ref_name }} \
           | jq '.assets[] | select(.name == "morse_linux-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip ") | .id')
         if [ -n "$ASSET_ID" ]; then
           gh api --method DELETE \
@@ -78,7 +96,7 @@ jobs:
 
 
     - name: Upload Release Asset
-      uses: softprops/action-gh-release
+      uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
