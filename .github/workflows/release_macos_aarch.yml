@@ -1,9 +1,9 @@
-name: aarch-apple-darwin
+name: Build arch-apple-darwin
 
 on:
   push:
     branches:
-      - osx-aarch
+      - osx_aarch
   pull_request:
 
 
