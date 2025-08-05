@@ -1,4 +1,4 @@
-name: Windows Binary Release
+name: Windows x86_64 Binary Release
 
 on:
   push:

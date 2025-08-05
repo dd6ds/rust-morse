@@ -1,4 +1,4 @@
-name: Windows i686 Binary Release
+name: Windows x86_64 Binary Release
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
 
 
     - name: Install Rust toolchain for Windows
-      run: rustup target add i686-pc-windows-gnu
+      run: rustup target add x86_64-unknown-linux-gnu
 
     - name: Install MinGW and zip
       run: |
@@ -32,16 +32,16 @@ jobs:
         sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get full-upgrade -y && sudo apt-get install pkg-config libssl-dev clang libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext librust-alsa-dev librust-udev-dev libfltk1.3-dev libfltk1.3t64 mingw-w64 gcc-multilib curl g++ pkg-config libx11-dev libasound2-dev libudev-dev librust-alsa-sys-dev libasound2-dev upx-ucl
 
     - name: Build release binary
-      run: cargo build --release --target i686-pc-windows-gnu
+      run: cargo build --release --target x86_64-unknown-linux-gnu
 
     - name: Prepare release artifacts
       run: |
         mkdir release
-        cp target/i686-pc-windows-gnu/release/morse.exe release/
+        cp target/x86_64-unknown-linux-gnu/release/morse release/
         cp icon.png release/
         cp *.mo release/
         cd release
-        zip -r morse_windows-i686-v${{ steps.get_version.outputs.cargo_version }}.zip ./*
+        zip -r morse_linux-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip ./*
         ls -lathr *.zip
         cd ..
 
@@ -63,6 +63,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: release/morse_windows-i686-v${{ steps.get_version.outputs.cargo_version }}.zip
-        asset_name: morse_windows-i686-v${{ steps.get_version.outputs.cargo_version }}.zip
+        asset_path: release/morse_linux-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip
+        asset_name: morse_linux-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip
         asset_content_type: application/zip
