@@ -1,4 +1,4 @@
-name: Release
+name: Release Source Code as ZIP
 
 on:
   push:
