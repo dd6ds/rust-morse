@@ -2,9 +2,9 @@ name: Build & Upload Release (aarch-apple-darwin)
 
 on:
   push:
-    tags:
-      - 'v*'
-  workflow_dispatch:
+    branches:
+      - main
+  pull_request:
 
 jobs:
   build-and-upload:
