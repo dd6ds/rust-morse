@@ -83,6 +83,9 @@ jobs:
             /repos/${{ github.repository }}/releases/assets/$ASSET_ID
         fi
 
+        gh api --method DELETE /repos/dd6ds/rust-morse/releases/assets/main.zip
+        gh api --method DELETE /repos/dd6ds/rust-morse/releases/assets/main.tar.gz
+
 
 
     - name: Create GitHub Release
