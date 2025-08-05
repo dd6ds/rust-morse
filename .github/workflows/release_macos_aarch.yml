@@ -34,7 +34,7 @@ jobs:
           cp icon.png release/
           cp *.mo release/
 
-          tar -czvf ${GITHUB_REF_NAME}-aarch64-apple-darwin.tar.gz -C release .
+          tar -czvf ${{ github.ref_name }}-aarch64-apple-darwin.tar.gz -C release .
 
 
       - name: Create GitHub Release
