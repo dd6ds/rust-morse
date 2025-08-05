@@ -33,12 +33,12 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Upload release asset
+      - name: Upload source code as artifact
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./rust-morse-v${{ env.TAG_NAME }}.zip
-          asset_name: rust-morse-v${{ env.TAG_NAME }}.zip
+          asset_path: ./ # You can zip your source and upload it
+          asset_name: "rust-morse-v${{ steps.get_version.outputs.cargo_version }}.zip"
           asset_content_type: application/zip
