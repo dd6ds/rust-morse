@@ -61,6 +61,14 @@ jobs:
       run: |
         ASSET_ID=$(gh api \
           repos/${{ github.repository }}/releases/tags/${{ github.ref_name }} \
+          | jq '.assets[] | select(.name == "release.zip") | .id')
+        if [ -n "$ASSET_ID" ]; then
+          gh api --method DELETE \
+            /repos/${{ github.repository }}/releases/assets/$ASSET_ID
+        fi
+
+        ASSET_ID=$(gh api \
+          repos/${{ github.repository }}/releases/tags/${{ github.ref_name }} \
           | jq '.assets[] | select(.name == "morse_linux-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip ") | .id')
         if [ -n "$ASSET_ID" ]; then
           gh api --method DELETE \
