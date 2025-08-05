@@ -12,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         env:
-          GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
       - name: Get version from Cargo.toml
@@ -98,5 +98,4 @@ jobs:
           asset_path: "rust-morse-v${{ steps.get_version.outputs.cargo_version }}.zip"
           asset_name: "rust-morse-v${{ steps.get_version.outputs.cargo_version }}.zip"
           asset_content_type: application/zip
-         
          
