@@ -45,6 +45,46 @@ jobs:
         ls -lathr *.zip
         cd ..
 
+
+    - name: Delete existing asset
+        run: |
+          ASSET_ID=$(gh api \
+            repos/${{ github.repository }}/releases/tags/${{ github.ref_name }} \
+              | jq '.assets[] | select(.name == "release.zip") | .id')
+            if [ -n "$ASSET_ID" ]; then
+              gh api --method DELETE \
+                /repos/${{ github.repository }}/releases/assets/$ASSET_ID
+            fi
+
+          ASSET_ID=$(gh api \
+            repos/${{ github.repository }}/releases/tags/${{ github.ref_name }} \
+            | jq '.assets[] | select(.name == "main.zip") | .id')
+          if [ -n "$ASSET_ID" ]; then
+            gh api --method DELETE \
+              /repos/${{ github.repository }}/releases/assets/$ASSET_ID
+          fi
+
+
+          ASSET_ID=$(gh api \
+            repos/${{ github.repository }}/releases/tags/${{ github.ref_name }} \
+            | jq '.assets[] | select(.name == "main.tar.gz") | .id')
+          if [ -n "$ASSET_ID" ]; then
+            gh api --method DELETE \
+              /repos/${{ github.repository }}/releases/assets/$ASSET_ID
+          fi
+
+
+          ASSET_ID=$(gh api \
+            repos/${{ github.repository }}/releases/tags/${{ github.ref_name }} \
+            | jq '.assets[] | select(.name == "morse_windows-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip ") | .id')
+          if [ -n "$ASSET_ID" ]; then
+            gh api --method DELETE \
+              /repos/${{ github.repository }}/releases/assets/$ASSET_ID
+          fi
+
+
+
+
     - name: Create GitHub Release
       id: create_release
       uses: actions/create-release@v1
@@ -57,43 +97,7 @@ jobs:
         prerelease: false
         allow_update: true
 
-    - name: Delete existing asset
-      run: |
-        ASSET_ID=$(gh api \
-          repos/${{ github.repository }}/releases/tags/${{ github.ref_name }} \
-            | jq '.assets[] | select(.name == "release.zip") | .id')
-          if [ -n "$ASSET_ID" ]; then
-            gh api --method DELETE \
-              /repos/${{ github.repository }}/releases/assets/$ASSET_ID
-          fi
-
-        ASSET_ID=$(gh api \
-          repos/${{ github.repository }}/releases/tags/${{ github.ref_name }} \
-          | jq '.assets[] | select(.name == "main.zip") | .id')
-        if [ -n "$ASSET_ID" ]; then
-          gh api --method DELETE \
-            /repos/${{ github.repository }}/releases/assets/$ASSET_ID
-        fi
-
-
-        ASSET_ID=$(gh api \
-          repos/${{ github.repository }}/releases/tags/${{ github.ref_name }} \
-          | jq '.assets[] | select(.name == "main.tar.gz") | .id')
-        if [ -n "$ASSET_ID" ]; then
-          gh api --method DELETE \
-            /repos/${{ github.repository }}/releases/assets/$ASSET_ID
-        fi
-
-
-        ASSET_ID=$(gh api \
-          repos/${{ github.repository }}/releases/tags/${{ github.ref_name }} \
-          | jq '.assets[] | select(.name == "morse_windows-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip ") | .id')
-        if [ -n "$ASSET_ID" ]; then
-          gh api --method DELETE \
-            /repos/${{ github.repository }}/releases/assets/$ASSET_ID
-        fi
-
-
+ 
 
     - name: Upload Release Asset
       uses: actions/upload-release-asset@v1

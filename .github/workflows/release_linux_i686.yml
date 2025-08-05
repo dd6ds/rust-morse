@@ -46,17 +46,6 @@ jobs:
         ls -lathr *.zip
         cd ..
 
-    - name: Create GitHub Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ github.ref_name }}
-        release_name: Release ${{ github.ref_name }}
-        draft: false
-        prerelease: false
-        allow_update: true
 
     - name: Delete existing asset
       run: |
@@ -93,6 +82,20 @@ jobs:
           gh api --method DELETE \
             /repos/${{ github.repository }}/releases/assets/$ASSET_ID
         fi
+
+
+
+    - name: Create GitHub Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref_name }}
+        release_name: Release ${{ github.ref_name }}
+        draft: false
+        prerelease: false
+        allow_update: true
 
 
     - name: Upload Release Asset
