@@ -1,0 +1,24 @@
+name: Release Source Code
+
+on:
+  push:
+    tags:
+      - 'v*'   # Triggers on tags like v1.0.0
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Zip source code
+        run: |
+          zip -r source-code.zip . -x "*.git*"   # Exclude git files
+
+      - name: Create GitHub Release and Upload Source ZIP
+        uses: softprops/action-gh-release@v1
+        with:
+          files: source-code.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
