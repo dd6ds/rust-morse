@@ -26,19 +26,17 @@ jobs:
           git push origin "v${{ steps.get_version.outputs.cargo_version }}"
 
       - name: Create GitHub Release
+        id: create_release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: "v${{ steps.get_version.outputs.cargo_version }}"
-          name: "Release v${{ steps.get_version.outputs.cargo_version }}"
-          draft: false
-          prerelease: false
+          tag_name: ${{ env.TAG_NAME }}
 
-      - name: Upload source code as artifact
+      - name: Upload release asset
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./ # You can zip your source and upload it
-          asset_name: "rust-morse-v${{ steps.get_version.outputs.cargo_version }}.zip"
+          asset_path: ./rust-morse-v${{ env.TAG_NAME }}.zip
+          asset_name: rust-morse-v${{ env.TAG_NAME }}.zip
           asset_content_type: application/zip
