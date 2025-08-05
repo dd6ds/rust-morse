@@ -57,6 +57,17 @@ jobs:
         prerelease: false
         allow_update: true
 
+    - name: Delete existing asset
+      run: |
+        ASSET_ID=$(gh api \
+          repos/${{ github.repository }}/releases/tags/${{ github.ref_name }} \
+          | jq '.assets[] | select(.name == "release.zip") | .id')
+        if [ -n "$ASSET_ID" ]; then
+          gh api --method DELETE \
+            /repos/${{ github.repository }}/releases/assets/$ASSET_ID
+        fi
+
+
     - name: Upload Release Asset
       uses: actions/upload-release-asset@v1
       env:
