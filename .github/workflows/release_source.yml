@@ -20,10 +20,10 @@ jobs:
 
       - name: Zip source code
         run: |
-        TAG=v$(date -Iseconds | sed 's/[T:\+]/-/g')
-        echo "$TAG"
-        echo "tag=$TAG" >> $GITHUB_OUTPUT
-        zip -r source-code.zip . -x "*.git*"   # Exclude git files
+          TAG=v$(date -Iseconds | sed 's/[T:\+]/-/g')
+          echo "$TAG"
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          zip -r source-code.zip . -x "*.git*"   # Exclude git files
 
       - name: Create GitHub Release and Upload Source ZIP
         uses: softprops/action-gh-release@v1
