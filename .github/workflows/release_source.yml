@@ -3,7 +3,7 @@ name: Release Source Code
 on:
   push:
     tags:
-      - 'v*'    # Trigger on version tags
+     - "*.*.*"
     branches: [ "main" ]
   pull_request:
     tags:
