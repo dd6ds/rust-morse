@@ -1,0 +1,43 @@
+name: Build & Upload Release (aarch-apple-darwin)
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-and-upload:
+    runs-on: macos-latest
+    env:
+      CARGO_TARGET_AARCH64_APPLE_DARWIN_LINKER: clang
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: aarch64-apple-darwin
+          override: true
+
+      - name: Build release for aarch64-apple-darwin
+        run: cargo build --release --target aarch64-apple-darwin
+
+      - name: Prepare release artifact
+        run: |
+          mkdir -p release
+          cp target/aarch64-apple-darwin/release/* release/
+          tar -czvf ${GITHUB_REF_NAME}-aarch64-apple-darwin.tar.gz -C release .
+
+      - name: Upload release artifact
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./${{ github.ref_name }}-aarch64-apple-darwin.tar.gz
+          asset_name: ${{ github.ref_name }}-aarch64-apple-darwin.tar.gz
+          asset_content_type: application/gzip
