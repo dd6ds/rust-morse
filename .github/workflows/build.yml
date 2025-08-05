@@ -40,14 +40,13 @@ jobs:
         run: |
           sudo apt install build-essential gcc-multilib g++-multilib
           sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get full-upgrade -y && sudo apt-get install pkg-config libssl-dev clang libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext librust-alsa-dev librust-udev-dev libfltk1.3-dev libfltk1.3t64 mingw-w64 gcc-multilib curl g++ pkg-config libx11-dev libasound2-dev libudev-dev librust-alsa-sys-dev libasound2-dev upx-ucl
-          if [[ "${{ matrix.target }}" == *linux* || "${{ matrix.target }}" == *windows* ]]; then
-            cross build --release --target ${{ matrix.target }}
-          else
-            cargo build --release --target ${{ matrix.target }}
-          fi
+          cargo build --release --target ${{ matrix.target }}
 
       - name: Rename binary
         run: |
+          sudo apt install build-essential gcc-multilib g++-multilib
+          sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get full-upgrade -y && sudo apt-get install pkg-config libssl-dev clang libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext librust-alsa-dev librust-udev-dev libfltk1.3-dev libfltk1.3t64 mingw-w64 gcc-multilib curl g++ pkg-config libx11-dev libasound2-dev libudev-dev librust-alsa-sys-dev libasound2-dev upx-ucl
+
           BIN_NAME="my_app"
           if [[ "${{ matrix.target }}" == *windows* ]]; then
             mv target/${{ matrix.target }}/release/${BIN_NAME}.exe ${BIN_NAME}-${{ matrix.target }}.exe
