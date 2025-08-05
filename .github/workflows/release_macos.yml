@@ -1,0 +1,34 @@
+name: Build x86_64-apple-darwin
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-macos:
+    runs-on: macos-latest
+    name: Build for x86_64-apple-darwin
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: x86_64-apple-darwin
+          profile: minimal
+
+      - name: Install Rust target
+        run: rustup target add x86_64-apple-darwin
+
+      - name: Build project
+        run: cargo build --release --target x86_64-apple-darwin
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: x86_64-apple-darwin-binary
+          path: target/x86_64-apple-darwin/release/
