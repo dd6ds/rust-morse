@@ -22,10 +22,15 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@users.noreply.github.com"
-          git tag "v${{ steps.get_version.outputs.cargo_version }}"
-          git push --force origin v${{ steps.get_version.outputs.cargo_version }}
+          git tag -f "v${{ steps.get_version.outputs.cargo_version }}"
+          git push --force origin "v${{ steps.get_version.outputs.cargo_version }}"
+
+      - name: Zip source code
+        run: |
+          zip -r "rust-morse-v${{ steps.get_version.outputs.cargo_version }}.zip" . -x '*.git*'
 
       - name: Create GitHub Release
+        id: create_release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: "v${{ steps.get_version.outputs.cargo_version }}"
@@ -39,6 +44,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./ # You can zip your source and upload it
+          asset_path: "rust-morse-v${{ steps.get_version.outputs.cargo_version }}.zip"
           asset_name: "rust-morse-v${{ steps.get_version.outputs.cargo_version }}.zip"
           asset_content_type: application/zip
