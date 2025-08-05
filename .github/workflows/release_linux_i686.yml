@@ -70,7 +70,7 @@ jobs:
 
         ASSET_ID=$(gh api \
           repos/${{ github.repository }}/releases/tags/${{ github.ref_name }} \
-          | jq '.assets[] | select(.name == "morse_linux-i686-v${{ steps.get_version.outputs.cargo_version }}.zip ") | .id')
+          | jq '.assets[] | select(.name == "morse_windows-i686-v${{ steps.get_version.outputs.cargo_version }}.zip ") | .id')
         if [ -n "$ASSET_ID" ]; then
           gh api --method DELETE \
             /repos/${{ github.repository }}/releases/assets/$ASSET_ID
@@ -83,6 +83,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: release/morse_linux-i686-v${{ steps.get_version.outputs.cargo_version }}.zip
-        asset_name: morse_linux-i686-v${{ steps.get_version.outputs.cargo_version }}.zip
+        asset_path: release/morse_windows-i686-v${{ steps.get_version.outputs.cargo_version }}.zip
+        asset_name: morse_windows-i686-v${{ steps.get_version.outputs.cargo_version }}.zip
         asset_content_type: application/zip

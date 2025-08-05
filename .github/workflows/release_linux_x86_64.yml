@@ -84,5 +84,5 @@ jobs:
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: release/morse_linux-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip
-        asset_name: morse_linux-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip
+        asset_name: morse_linuxx86_64-v${{ steps.get_version.outputs.cargo_version }}.zip
         asset_content_type: application/zip
