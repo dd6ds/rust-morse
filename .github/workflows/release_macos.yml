@@ -43,6 +43,7 @@ jobs:
           cp *.mo release/
           cd release
           zip -r morse_macos-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip ./*
+          ls -lathr
 
 
 
