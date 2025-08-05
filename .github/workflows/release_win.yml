@@ -45,24 +45,14 @@ jobs:
     - name: Prepare release artifacts
       run: |
         mkdir release
-        cp target/x86_64-pc-windows-gnu/release/morse.exe release/
+        cp target/x86_64-pc-windows-gnu/release/morse.exe release/morse_x86_64.exe
+        cp target/i686-pc-windows-gnu/release/morse.exe release/morse_i686.exe
+        cp target/i686-unknown-linux-gnu/release/morse release/more_linux_i686
+        cp target/x86_64-unknown-linux-gnu/release/morse release/more_linux_x86_64
         cp icon.png release/
         cp *.mo release/
         cd release
-        zip -r morse_windows-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip ./*
-        ls -lathr *.zip
-        rm morse.exe
-        cp target/i686-pc-windows-gnu/release/morse.exe release/
-        cp icon.png release/
-        cp *.mo release/
-        cd release
-        zip -r morse_windows-i686-v${{ steps.get_version.outputs.cargo_version }}.zip ./*
-        rm morse.exe
-        cp target/i686-unknown-linux-gnu/release/morse release/
-        zip -r morse_linux-i686-v${{ steps.get_version.outputs.cargo_version }}.zip ./*
-        rm morse
-        cp target/x86_64-unknown-linux-gnu/release/morse release/
-        zip -r morse_linux-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip ./*
+        zip -r morse_bundle-v${{ steps.get_version.outputs.cargo_version }}.zip ./*
         cd ..
 
 
@@ -142,18 +132,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: release/morse_windows-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip
-        asset_name: morse_windows-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip
-        asset_content_type: application/zip
-
-        asset_path: release/morse_windows-i686-v${{ steps.get_version.outputs.cargo_version }}.zip
-        asset_name: morse_windows-i686-v${{ steps.get_version.outputs.cargo_version }}.zip
-        asset_content_type: application/zip
-
-        asset_path: release/morse_linux-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip
-        asset_name: morse_linux-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip
-        asset_content_type: application/zip
-
-        asset_path: release/morse_linux-i686-v${{ steps.get_version.outputs.cargo_version }}.zip
-        asset_name: morse_linux-i686-v${{ steps.get_version.outputs.cargo_version }}.zip
+        asset_path: release/morse_bundle-v${{ steps.get_version.outputs.cargo_version }}.zip
+        asset_name: morse_bundle-v${{ steps.get_version.outputs.cargo_version }}.zip
         asset_content_type: application/zip
