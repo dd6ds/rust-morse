@@ -84,8 +84,21 @@ jobs:
             /repos/${{ github.repository }}/releases/assets/$ASSET_ID
         fi
 
-        gh api --method DELETE /repos/dd6ds/rust-morse/releases/assets/main.zip
-        gh api --method DELETE /repos/dd6ds/rust-morse/releases/assets/main.tar.gz
+        ASSET_ID=$(gh api \
+            repos/${{ github.repository }}/releases/tags/${{ github.ref_name }} \
+            | jq '.assets[] | select(.name == "main.zip") | .id')
+          if [ -n "$ASSET_ID" ]; then
+            gh api --method DELETE \
+              /repos/${{ github.repository }}/releases/assets/$ASSET_ID
+          fi
+
+        ASSET_ID=$(gh api \
+            repos/${{ github.repository }}/releases/tags/${{ github.ref_name }} \
+            | jq '.assets[] | select(.name == "main.tar.gz") | .id')
+          if [ -n "$ASSET_ID" ]; then
+            gh api --method DELETE \
+              /repos/${{ github.repository }}/releases/assets/$ASSET_ID
+          fi
 
 
 
