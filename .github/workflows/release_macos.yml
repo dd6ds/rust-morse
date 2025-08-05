@@ -27,6 +27,17 @@ jobs:
       - name: Build project
         run: cargo build --release --target x86_64-apple-darwin
 
+      - name: Prepare release artifacts
+        run: |
+          mkdir release
+          cp target/x86_64-apple-darwin/release/morse release/morse_apple_x86_64
+          cp icon.png release/
+          cp *.mo release/
+          cd release
+          zip -r morse_macos-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip ./*
+
+
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
@@ -44,3 +55,13 @@ jobs:
           draft: false
           prerelease: false
 
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: release/morse_macos-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip
+          asset_name: morse_macos-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip
+          asset_content_type: application/zip
