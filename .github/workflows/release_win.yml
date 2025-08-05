@@ -37,11 +37,11 @@ jobs:
     - name: Prepare release artifacts
       run: |
         mkdir release
-        cp target/x86_64-pc-windows-gnu/release/rust-morse.exe release/
+        cp target/x86_64-pc-windows-gnu/release/morse.exe release/
         cp icon.png release/
         cp *.mo release/
         cd release
-        zip -r rust-morse_windows-$version.zip ./*
+        zip -r morse_windows-$version.zip ./*
         cd ..
 
     - name: Create GitHub Release
@@ -61,6 +61,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: release/rust-morse_windows-$version.zip
-        asset_name: rust-morse_windows-$version.zip
+        asset_path: release/morse_windows-$version.zip
+        asset_name: morse_windows-$version.zip
         asset_content_type: application/zip
