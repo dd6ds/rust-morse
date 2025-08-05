@@ -3,7 +3,7 @@ name: Build arch-apple-darwin
 on:
   push:
     branches:
-      - osx
+      - main
   pull_request:
 
 
