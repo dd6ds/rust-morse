@@ -14,6 +14,9 @@ jobs:
 
     - name: Checkout code
       uses: actions/checkout@v4
+      env:
+      GH_TOKEN: ${{ github.token }}
+
 
     - name: Get version from Cargo.toml
       id: get_version
@@ -82,8 +85,6 @@ jobs:
               /repos/${{ github.repository }}/releases/assets/$ASSET_ID
           fi
 
-        env:
-        GH_TOKEN: ${{ github.token }}
         gh api --method DELETE /repos/dd6ds/rust-morse/releases/assets/main.zip
         gh api --method DELETE /repos/dd6ds/rust-morse/releases/assets/main.tar.gz
 
