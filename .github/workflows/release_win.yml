@@ -49,7 +49,9 @@ jobs:
 
 
     - name: Delete existing asset
-        run: |
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
           ASSET_ID=$(gh api \
             repos/${{ github.repository }}/releases/tags/${{ github.ref_name }} \
               | jq '.assets[] | select(.name == "release.zip") | .id')
