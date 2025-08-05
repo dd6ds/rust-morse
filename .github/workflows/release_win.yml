@@ -25,7 +25,12 @@ jobs:
 
 
     - name: Install Rust toolchain for Windows
-      run: rustup target add x86_64-pc-windows-gnu
+      run: |
+        rustup target add x86_64-pc-windows-gnu
+        rustup target add i686-pc-windows-gnu
+        rustup target add x86_64-unknown-linux-gnu
+        rustup target add i686-unknown-linux-gnu
+
 
     - name: Install MinGW and zip
       run: |
