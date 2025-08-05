@@ -135,28 +135,12 @@ jobs:
         prerelease: false
 
  
-
     - name: Upload Release Asset
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: release/morse_windows-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip
-        asset_name: morse_windows-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip
-        asset_content_type: application/zip
-
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: release/morse_windows-i686-v${{ steps.get_version.outputs.cargo_version }}.zip
-        asset_name: morse_windows-i686-v${{ steps.get_version.outputs.cargo_version }}.zip
-        asset_content_type: application/zip
-
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: release/morse_linux-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip
-        asset_name: morse_linux-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip
-        asset_content_type: application/zip
-
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: release/morse_linux-i686-v${{ steps.get_version.outputs.cargo_version }}.zip
-        asset_name: morse_linux-i686-v${{ steps.get_version.outputs.cargo_version }}.zip
+        asset_path: release/morse_bundle-v${{ steps.get_version.outputs.cargo_version }}.zip
+        asset_name: morse_bundle-v${{ steps.get_version.outputs.cargo_version }}.zip
         asset_content_type: application/zip
