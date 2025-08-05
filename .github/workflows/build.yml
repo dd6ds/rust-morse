@@ -1,108 +1,92 @@
-name: morse build
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-
+name: Release
+on: [push, pull_request]
+env:
+  CRATE_NAME: mytest
+  GITHUB_TOKEN: ${{ github.token }}
+  RUST_BACKTRACE: 1
 jobs:
-  build:
-    # Setzt je nach Ziel das passende OS-Image für optimales Cross-Compiling
+  test:
+    name: ${{ matrix.platform.os_name }} with rust ${{ matrix.toolchain }}
+    runs-on: ${{ matrix.platform.os }}
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - target: x86_64-pc-windows-gnu
-            os: ubuntu-latest
-            archive: zip
-          - target: i686-pc-windows-gnu
-            os: ubuntu-latest
-            archive: zip
-          - target: x86_64-unknown-linux-gnu
-            os: ubuntu-latest
-            bin: morse
-            name: morse-Linux-x86_64.tar.gz
-            archive: tar.gz
-          - target: i686-unknown-linux-gnu
-            os: ubuntu-latest
-            archive: tar.gz
-          - target: x86_64-apple-darwin
-            os: macos-latest
-            archive: tar.gz
-          - target: aarch64-apple-darwin
-            os: macos-latest
-            archive: tar.gz
-
-    runs-on: ${{ matrix.os }}
-
+        platform:
+          - os_name: Linux-x86_64
+            os: ubuntu-20.04
+            target: x86_64-unknown-linux-musl
+            bin: mytest
+            name: mytest-Linux-x86_64-musl.tar.gz
+          - os_name: Windows-x86_64
+            os: windows-latest
+            target: x86_64-pc-windows-msvc
+            bin: mytest.exe
+            name: mytest-Windows-x86_64.zip
+        toolchain:
+          - stable
     steps:
-      - name: Checkout source
-        uses: actions/checkout@v3
-
-      # Für Linux (auch Windows GNU Cross-Compilation auf Linux Runner) native Build-Tools installieren
-      - name: Install dependencies for Linux builds
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential gcc-multilib g++-multilib
-          sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get full-upgrade -y && sudo apt-get install pkg-config libssl-dev clang libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext librust-alsa-dev librust-udev-dev libfltk1.3-dev libfltk1.3t64 mingw-w64 gcc-multilib curl g++ pkg-config libx11-dev libasound2-dev libudev-dev librust-alsa-sys-dev libasound2-dev upx-ucl
-
-      # Für macOS keine zusätzlichen Schritte nötig, GitHub Runner hat Xcode etc. vorinstalliert
-
-      - name: Setup Rust toolchain
-        uses: actions-rs/toolchain@v1
+      - uses: actions/checkout@v3
+      - name: Cache cargo & target directories
+        uses: Swatinem/rust-cache@v2
         with:
-          profile: minimal
-          toolchain: stable
-          target: ${{ matrix.target }}
-          override: true
-
-      - name: Build release binary
-        run: cargo build --release --target ${{ matrix.target }}
-
-      - name: Prepare release directory and archive
+          key: "v2"
+      - name: Configure Git
         run: |
-          mkdir -p release
-          binary_name="morse" # Ersetze durch den tatsächlichen Binary-Namen aus Cargo.toml [package] name
-          ext=""
-          if [[ "${{ matrix.target }}" == *windows* ]]; then
-            ext=".exe"
-          fi
-          binary_path="target/${{ matrix.target }}/release/${binary_name}${ext}"
-          cp "$binary_path" release/
-          
-          cd release
-          if [[ "${{ matrix.archive }}" == "zip" ]]; then
-            zip -r "../${binary_name}-${{ matrix.target }}.zip" "${binary_name}${ext}"
+          git config --global user.email "abc@google.net"
+          git config --global user.name "Abc"
+      - name: Install musl-tools on Linux
+        run: sudo apt-get update --yes && sudo apt-get install --yes musl-tools
+        if: contains(matrix.platform.name, 'musl')
+      - name: Install build-essential on Linux
+        run: sudo apt-get install --yes build-essential
+        if: contains(matrix.platform.name, 'musl')
+      - name: Link g++
+        run: sudo ln -s /bin/g++ /bin/musl-g++
+        if: contains(matrix.platform.name, 'musl')
+      - name: Build binary
+        uses: houseabsolute/actions-rust-cross@v0
+        with:
+          command: "build"
+          target: ${{ matrix.platform.target }}
+          toolchain: ${{ matrix.toolchain }}
+          args: "--release"
+          strip: false
+      - name: Run tests
+        uses: houseabsolute/actions-rust-cross@v0
+        with:
+          command: "test"
+          target: ${{ matrix.platform.target }}
+          toolchain: ${{ matrix.toolchain }}
+          args: "--release"
+        if: ${{ !matrix.platform.skip_tests }}
+      - name: Package as archive
+        shell: bash
+        run: |
+          cd target/${{ matrix.platform.target }}/release
+          if [[ "${{ matrix.platform.os }}" == "windows-latest" ]]; then
+            7z a ../../../${{ matrix.platform.name }} ${{ matrix.platform.bin }}
           else
-            tar czf "../${binary_name}-${{ matrix.target }}.tar.gz" "${binary_name}${ext}"
+            tar czvf ../../../${{ matrix.platform.name }} ${{ matrix.platform.bin }}
           fi
-          cd ..
-
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          cd -
+        if: matrix.toolchain == 'stable'
+      - name: Publish release artifacts
+        uses: actions/upload-artifact@v3
         with:
-          override: true
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-
-
-      - name: Set output
-        run: echo "{name}={value}" >> $GITHUB_OUTPUT
-
-      - name: Upload release asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TAG_NAME: ${{ github.ref_name }}
+          name: mytest-${{ matrix.platform.os_name }}
+          path: "mytest-*"
+        if: matrix.toolchain == 'stable'
+      - name: Generate SHA-256
+        run: shasum -a 256 ${{ matrix.platform.name }}
+        if: |
+          matrix.toolchain == 'stable' &&
+          matrix.platform.os == 'macOS-latest' &&
+          ( startsWith( github.ref, 'refs/tags/v' ) ||
+            github.ref == 'refs/tags/test-release' )
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v1
         with:
-          run: echo "TAG_NAME=$(echo ${GITHUB_REF#refs/tags/})" >> $GITHUB_ENV
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./morse-x86_64-unknown-linux-gnu.tar.gz
-          asset_name: morse-x86_64-unknown-linux-gnu.tar.gz
-          asset_content_type: application/octet-stream
+          draft: true
+          files: "mytest*"
+          body_path: Changes.md
+        if: matrix.toolchain == 'stable' && startsWith( github.ref, 'refs/tags/v' )
