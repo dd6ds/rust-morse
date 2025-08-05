@@ -33,9 +33,6 @@ jobs:
           zip -r "rust-morse-v${{ steps.get_version.outputs.cargo_version }}.zip" . -x '*.git*'
 
       - name: Delete existing asset
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
         run: |
           ASSET_ID=$(gh api \
             repos/${{ github.repository }}/releases/tags/${{ github.ref_name }} \
