@@ -49,6 +49,7 @@ jobs:
         ls -lathr *.zip
         cd ..
 
+
     - name: Delete existing asset
       run: |
         ASSET_ID=$(gh api \
@@ -122,6 +123,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
+        allowUpdates: true
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: release/morse_windows-i686-v${{ steps.get_version.outputs.cargo_version }}.zip
         asset_name: morse_windows-i686-v${{ steps.get_version.outputs.cargo_version }}.zip
