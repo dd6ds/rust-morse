@@ -157,7 +157,7 @@ fn main() {
             menu::MenuFlag::Normal,
             move |_| {
                 let about_msg = format!(
-                    "\n{} {VERSION}, \nPlatform: {CURRENT_PLATFORM} \nCompiled on: {COMPILED_ON} \nRustc Version: {rustc_version} \nFLTK Version: {fltkversion} \nComplied at {compile_datetime} \nAutor: dd6ds \nURL: https://github.com/dd6ds/rust-morse/releases", catalog.gettext("Morse Code Trainer\n\nVersion: "),
+                    "\n{} {VERSION} \nPlatform: {CURRENT_PLATFORM} \nCompiled on: {COMPILED_ON} \nRustc Version: {rustc_version} \nFLTK Version: {fltkversion} \nComplied at {compile_datetime} \nAutor: dd6ds \nURL: https://github.com/dd6ds/rust-morse/releases", catalog.gettext("Morse Code Trainer\n\nVersion: "),
 
             );
                 dialog::message_default(&about_msg);
