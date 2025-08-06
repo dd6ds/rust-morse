@@ -1,4 +1,4 @@
-name: Build arch-apple-darwin
+name: Build aarch-apple-darwin
 
 on:
   push:
