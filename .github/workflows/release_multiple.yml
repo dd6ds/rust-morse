@@ -6,8 +6,8 @@ permissions:
 
 on:
   push:
-    - tags:
-        - ${{ github.ref_name }}
+    tags:
+      - ${{ github.ref_name }}
 jobs:
   create-release:
     runs-on: ubuntu-latest
