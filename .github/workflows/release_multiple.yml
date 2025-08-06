@@ -1,8 +1,8 @@
 name: Release for multiple platforms
 
 on:
-  push:
-
+  release:
+    types: [created]
 
 permissions:
   contents: write
