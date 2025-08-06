@@ -3,6 +3,8 @@ name: Release for multiple platforms
 on:
   release:
     types: [created]
+  with:
+    ref: refs/tags/alpha
 
 permissions:
   contents: write
