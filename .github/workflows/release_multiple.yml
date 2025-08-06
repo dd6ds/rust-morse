@@ -1,4 +1,4 @@
-name: Release multible platforms
+name: Release for multiple platforms
 
 permissions:
   contents: write
@@ -27,31 +27,18 @@ jobs:
         include:
           - target: x86_64-unknown-linux-gnu
             os: ubuntu-latest
-          - target: i686-unknown-linux-gnu
-            os: ubuntu-latest
           - target: x86_64-apple-darwin
-            os: macos-latest
-          - target: aarch-apple-darwin
             os: macos-latest
           - target: x86_64-pc-windows-msvc
             os: windows-latest
-          - target: i686-pc-windows-msvc
-            os: windows-latest
-  
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - uses: taiki-e/upload-rust-binary-action@v1
-      - name: install deps
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential gcc-multilib g++-multilib
-          sudo apt-get install gcc-mingw-w64 gcc-multilib curl pkg-config
-          sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get full-upgrade -y && sudo apt-get install pkg-config libssl-dev clang libx11-dev libxext-dev libxft-dev libxinerama-dev libxcursor-dev libxrender-dev libxfixes-dev libpango1.0-dev libgl1-mesa-dev libglu1-mesa-dev cmake gettext librust-alsa-dev librust-udev-dev libfltk1.3-dev libfltk1.3t64 mingw-w64 gcc-multilib curl g++ pkg-config libx11-dev libasound2-dev libudev-dev librust-alsa-sys-dev libasound2-dev upx-uc
         with:
           # (required) Comma-separated list of binary names (non-extension portion of filename) to build and upload.
           # Note that glob pattern is not supported yet.
-          bin: morse
+          bin: ...
           # (optional) Target triple, default is host triple.
           # This is optional but it is recommended that this always be set to
           # clarify which target you are building for if macOS is included in
@@ -68,24 +55,3 @@ jobs:
           zip: windows
           # (required) GitHub token for uploading assets to GitHub Releases.
           token: ${{ secrets.GITHUB_TOKEN }}
-
-
-    upload-assets:
-      needs: create-release
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v4
-        - uses: taiki-e/upload-rust-binary-action@v1
-          with:
-            bin: morse
-            # (optional) Archive name (non-extension portion of filename) to be uploaded.
-            # [default value: $bin-$target]
-            # [possible values: the following variables and any string]
-            #   variables:
-            #     - $bin    - Binary name (non-extension portion of filename).
-            #     - $target - Target triple.
-            #     - $tag    - Tag of this release.
-            # When multiple binary names are specified, default archive name or $bin variable cannot be used.
-            archive: $bin-$tag-$target
-            # (required) GitHub token for uploading assets to GitHub Releases.
-            token: ${{ secrets.GITHUB_TOKEN }}
