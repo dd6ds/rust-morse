@@ -2,8 +2,6 @@ name: Release for multiple platforms
 
 on:
   push:
-    tags:
-      - v[0-9]
 
 
 permissions:
