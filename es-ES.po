@@ -1,0 +1,61 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Morse Code Trainer\n"
+"Language: de\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#: main.rs
+msgid "Morse Code Trainer"
+msgstr "Morsecode-Trainer"
+
+#: main.rs
+msgid "Text:"
+msgstr "Text:"
+
+#: main.rs
+msgid "Play"
+msgstr "Abspielen"
+
+#: main.rs
+msgid "WPM:"
+msgstr "WPM:"
+
+#: main.rs
+msgid "File/Quit\t"
+msgstr "Datei/Beenden\t"
+
+#: main.rs
+msgid "Info/About"
+msgstr "Info/Über"
+
+#: main.rs
+msgid "Morse Code Trainer\n\nVersion: "
+msgstr "Morsecode-Trainer\n\nVersion: "
+
+#: main.rs
+msgid ""
+"\n{} {VERSION}, \nPlatform: {CURRENT_PLATFORM} \nCompiled on: {COMPILED_ON} \nRust Version: {rustc_version} \nComplied at {compile_datetime}"
+msgstr ""
+"\n{} {VERSION}, \nPlattform: {CURRENT_PLATFORM} \nKompiliert am: {COMPILED_ON} \nRust-Version: {rustc_version} \nKompiliert am {compile_datetime}"
+
+#: main.rs
+msgid "Icon could not be loaded"
+msgstr "Symbol konnte nicht geladen werden"
+
+#: main.rs
+msgid "LanguageFile: {file_path} exists!"
+msgstr "Sprachdatei: {file_path} existiert!"
+
+#: main.rs
+msgid "File: {file_path} does not exist! Program abort"
+msgstr "Datei: {file_path} existiert nicht! Programmabbruch"
+
+msgid "Enter the Text you like to hear in Morse Code"
+msgstr "Geben Sie den Text ein, den Sie im Morsecode hören möchten"
+
+msgid "adjust WPM (Words per minute)"
+msgstr "WPM (Wörter pro Minute) anpassen"
+
+msgid "Play Morse Code"
+msgstr "Morse Code abspielen"
+

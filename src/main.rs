@@ -1,6 +1,6 @@
 use fltk::enums::Align;
-use fltk::image;
-use fltk::{app, dialog, enums::Shortcut, menu, prelude::*, window::Window, image::PngImage, input::Input, frame::Frame, valuator::Slider, button::Button};
+use fltk::image::{self};
+use fltk::{app, dialog, enums::Shortcut, menu, prelude::*, window::Window, input::Input, frame::Frame, valuator::Slider, button::Button};
 use once_cell::sync::Lazy;
 use std::{collections::HashMap, thread, time::Duration};
 use rodio::{source::Source};
@@ -20,6 +20,22 @@ const PLAYICON: &str = r#"
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="darkgreen" class="bi bi-file-play-fill" viewBox="0 0 16 16">
   <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M6 5.883a.5.5 0 0 1 .757-.429l3.528 2.117a.5.5 0 0 1 0 .858l-3.528 2.117a.5.5 0 0 1-.757-.43V5.884z"/>
 </svg>"#;
+
+const PRGICON: &str = r#"
+<svg width="100" height="24" viewBox="0 0 100 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="black" stroke-width="2">
+  <!-- Punkt -->
+  <circle cx="10" cy="12" r="3" fill="black"/>
+  <!-- Punkt -->
+  <circle cx="25" cy="12" r="3" fill="black"/>
+  <!-- Punkt -->
+  <circle cx="40" cy="12" r="3" fill="black"/>
+  <!-- Strich -->
+  <rect x="55" y="9" width="15" height="6" fill="black"/>
+  <!-- Strich -->
+  <rect x="75" y="9" width="15" height="6" fill="black"/>
+</svg>"#;
+
+
 
 
 static MORSE_CODE: Lazy<HashMap<char, &str>> = Lazy::new(|| {
@@ -100,7 +116,8 @@ fn main() {
 
         let mut wind = Window::new(100, 100, 400, 300, catalog.gettext("Morse Code Trainer"));
         // Icon laden (PNG)
-        let icon = PngImage::load("icon.png").expect("Icon could not be loaded");
+        let icon = fltk::image::SvgImage::from_data(PRGICON).expect("Icon could not be loaded");
+
         wind.set_icon(Some(icon));
 
         let mut input = Input::new(120, 90, 300, 30, "Text:");
@@ -108,7 +125,6 @@ fn main() {
 
         let mut morse_frame = Frame::new(120, 130, 300, 30, "");
 
-//        let mut slider = Slider::new(30, 110, 20, 50, "WPM: ");
         let mut slider = Slider::new(30, 110, 20, 50, "");
 
         // Set WPM Range
@@ -119,8 +135,7 @@ fn main() {
         slider.set_tooltip(catalog.gettext("adjust WPM (Words per minute)"));
 
         slider.set_label(&format!("WPM: {}", slider.value() as i32));
-//        slider.redraw();
- 
+
 
         // Update WPM label when slider moved
         slider.set_callback(move |s| {
