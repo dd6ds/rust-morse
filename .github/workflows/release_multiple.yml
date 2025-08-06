@@ -7,7 +7,7 @@ permissions:
 on:
   push:
     tags:
-      - ${{ github.ref_name }}
+      - v[0-9]+.*
 jobs:
   create-release:
     runs-on: ubuntu-latest
