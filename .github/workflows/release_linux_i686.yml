@@ -36,6 +36,7 @@ jobs:
 
       - name: Build project
         run: |
+          rustup up
           cargo build --release --target i686-unknown-linux-gnu
 
       - name: Prepare release artifacts

@@ -35,6 +35,7 @@ jobs:
 
       - name: Build project
         run: |
+          rustup up
           cargo build --release --target x86_64-pc-windows-gnu
 
       - name: Prepare release artifacts

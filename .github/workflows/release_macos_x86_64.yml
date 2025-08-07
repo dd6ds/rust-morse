@@ -37,6 +37,7 @@ jobs:
       - name: Build project
         run: |
           brew install upx
+          rustup up
           cargo build --release --target x86_64-apple-darwin
 
       - name: Prepare release artifacts
