@@ -1,0 +1,59 @@
+
+name: Build aarch64-pc-windows-msvc
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-macos:
+    runs-on: windows-latest
+    name: Build for aarch64-pc-windows-msvc
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get version from Cargo.toml
+        id: get_version
+        run: |
+         version=$(grep '^version' Cargo.toml | head -n 1 | sed 's/version = "\(.*\)"/\1/')
+         echo "cargo_version=$version" >> $GITHUB_OUTPUT
+
+
+
+      - name: Install Rust toolchain for Windows
+        run: rustup target add aarch64-pc-windows-msvc
+
+      - name: Build project
+        run: |
+          cargo build --release --target aarch64-pc-windows-msvc
+
+      - name: Prepare release artifacts
+        run: |
+          mkdir release
+          copy target/aarch64-pc-windows-msvc/release/morse.exe release/morse_win_aarch.exe
+          upx --best release/morse_win_aarch.exe
+          cp icon.png release/
+          cp *.mo release/
+          cd release
+          zip -r morse_windows-aarch-v${{ steps.get_version.outputs.cargo_version }}.zip ./*
+          ls -lathr
+
+
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: aarch64-pc-windows-msvc-binary
+          path: target/aarch64-pc-windows-msvc/release/
+
+    
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }} 
+          files: release/morse_windows-aarch-v${{ steps.get_version.outputs.cargo_version }}.zip
+
+
