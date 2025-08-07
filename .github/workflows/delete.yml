@@ -17,6 +17,7 @@ jobs:
 
       - name: Delete main.zip
         run: |
+          ls -lathr
           git rm -f archive/refs/tags/main.zip
           git commit -m "Delete main.zip"
           git push
