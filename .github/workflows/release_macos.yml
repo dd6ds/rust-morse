@@ -2,6 +2,10 @@
 name: Delete main.zip from main branch
 on:
  push: 
+  branches:
+      - main
+  pull_request:
+
 jobs:
   delete-file:
     runs-on: ubuntu-latest
