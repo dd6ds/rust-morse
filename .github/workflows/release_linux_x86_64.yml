@@ -45,7 +45,7 @@ jobs:
           cp icon.png release/
           cp *.mo release/
           cd release
-          zip -r morse_windows-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip ./*
+          zip -r morse_linux-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip ./*
           ls -lathr
 
 
@@ -61,6 +61,6 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }} 
-          files: release/morse_windows-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip
+          files: release/morse_linux-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip
 
 
