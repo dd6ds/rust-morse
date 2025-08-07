@@ -3,7 +3,7 @@ name: Build aarch-apple-darwin
 on:
   push:
     branches:
-      - main
+      - aarch
   pull_request:
 
 
@@ -42,6 +42,20 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
  
+
+      - name: Delete Branch
+        on:
+          workflow_dispatch:
+        jobs:
+          delete_branch:
+            runs-on: ubuntu-latest
+            steps:
+              - uses: dawidd6/action-delete-branch@v3
+                with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  branches: aarch
+
+
 
       - name: Create GitHub Release
         id: create_release
