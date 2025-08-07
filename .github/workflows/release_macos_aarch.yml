@@ -37,16 +37,6 @@ jobs:
           tar -czvf ${{ github.ref_name }}-aarch64-apple-darwin.tar.gz -C release .
 
 
- 
-
-      - name: Delete Branch
-        steps:
-          - uses: dawidd6/action-delete-branch@v3
-            with:
-              github_token: ${{ secrets.GITHUB_TOKEN }}
-              branches: main
-
-
 
       - name: Create GitHub Release
         id: create_release
