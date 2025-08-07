@@ -37,10 +37,13 @@ jobs:
           tar -czvf ${{ github.ref_name }}-aarch64-apple-darwin.tar.gz -C release .
 
 
+      - name: delete existing releses
+        run: cargo install git-clean --force
+ 
+
       - name: Create GitHub Release
         id: create_release
         uses: actions/create-release@v1
-        run: cargo install git-clean --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
