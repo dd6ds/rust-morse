@@ -1,0 +1,68 @@
+
+name: Build aarch-apple-darwin
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-macos:
+    runs-on: macos-latest
+    name: Build for aarch-apple-darwin
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get version from Cargo.toml
+        id: get_version
+        run: |
+         version=$(grep '^version' Cargo.toml | head -n 1 | sed 's/version = "\(.*\)"/\1/')
+         echo "cargo_version=$version" >> $GITHUB_OUTPUT
+
+
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: aarch-apple-darwin
+          profile: minimal
+
+
+      - name: Install Rust target
+        run: rustup target add aarch-apple-darwin
+
+      - name: Build project
+        run: |
+          brew install upx
+          cargo build --release --target aarch-apple-darwin
+
+      - name: Prepare release artifacts
+        run: |
+          mkdir release
+          cp target/aarch-apple-darwin/release/morse release/morse_apple_aarch
+          upx --best release/morse_apple_aarch
+          cp icon.png release/
+          cp *.mo release/
+          cd release
+          zip -r morse_macos-aarch-v${{ steps.get_version.outputs.cargo_version }}.zip ./*
+          ls -lathr
+
+
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: aarch-apple-darwin-binary
+          path: target/aarch-apple-darwin/release/
+
+    
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }} 
+          files: release/morse_macos-aarch-v${{ steps.get_version.outputs.cargo_version }}.zip
+
+
