@@ -3,7 +3,7 @@ name: Build aarch-apple-darwin
 on:
   push:
     branches:
-      - aarch
+      - main
   pull_request:
 
 
@@ -48,7 +48,7 @@ jobs:
           - uses: dawidd6/action-delete-branch@v3
             with:
               github_token: ${{ secrets.GITHUB_TOKEN }}
-                branches: aarch
+                branches: main
 
 
 
