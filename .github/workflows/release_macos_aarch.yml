@@ -44,8 +44,6 @@ jobs:
  
 
       - name: Delete Branch
-        on:
-          workflow_dispatch:
         jobs:
           delete_branch:
             runs-on: ubuntu-latest
