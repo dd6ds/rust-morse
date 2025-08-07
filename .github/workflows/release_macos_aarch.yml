@@ -39,6 +39,13 @@ jobs:
 
       - name: delete existing releses
         run: cargo install git-clean --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref_name }}
+          release_name: Release ${{ github.ref_name }}
+          draft: false
+          prerelease: false
  
 
       - name: Create GitHub Release
