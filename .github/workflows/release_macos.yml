@@ -1,8 +1,7 @@
 
 name: Delete main.zip from main branch
 on:
-  workflow_dispatch:  # Manually trigger the workflow
-
+ push: 
 jobs:
   delete-file:
     runs-on: ubuntu-latest
