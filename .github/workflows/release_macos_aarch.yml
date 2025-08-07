@@ -44,11 +44,11 @@ jobs:
  
 
       - name: Delete Branch
-          steps:
-            - uses: dawidd6/action-delete-branch@v3
-              with:
-                github_token: ${{ secrets.GITHUB_TOKEN }}
-                 branches: aarch
+        steps:
+          - uses: dawidd6/action-delete-branch@v3
+            with:
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+                branches: aarch
 
 
 
