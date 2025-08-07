@@ -41,7 +41,7 @@ jobs:
       - name: Prepare release artifacts
         run: |
           mkdir release
-          cp target/i686-unknown-linux-gnu/release/morse.exe release/morse_linux_x86_64
+          cp target/i686-unknown-linux-gnu/release/morse release/morse_linux_x86_64
           upx --best release/morse_linux_x86_64
           cp icon.png release/
           cp *.mo release/
