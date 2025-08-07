@@ -53,7 +53,7 @@ jobs:
           name: x86_64-apple-darwin-binary
           path: target/x86_64-apple-darwin/release/
 
-      - name: Create GitHub Release
+      - name: Create GitHub Release macos x86_64
         id: create_release
         uses: actions/create-release@v1
         env:
