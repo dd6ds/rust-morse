@@ -1,12 +1,14 @@
-name: Release
+name: Source Release
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
 permissions:
   contents: write
 
-on:
-  push:
-    tags:
-      - v[0-9]+.*
 
 jobs:
   create-release:
