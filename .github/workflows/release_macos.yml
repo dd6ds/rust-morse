@@ -1,3 +1,26 @@
+
+name: Delete main.zip from main branch
+on:
+  workflow_dispatch:  # Manually trigger the workflow
+
+jobs:
+  delete-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Delete main.zip
+        run: |
+          git rm -f main.zip
+          git commit -m "Delete main.zip"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
 name: Build x86_64-apple-darwin
 
 on:
