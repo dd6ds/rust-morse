@@ -1,20 +1,20 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Morse Code Trainer\n"
-"Language: de\n"
+"Idioma: es\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 
 #: main.rs
 msgid "Morse Code Trainer"
-msgstr "Morsecode-Trainer"
+msgstr "Entrenador de código Morse"
 
 #: main.rs
 msgid "Text:"
-msgstr "Text:"
+msgstr "Texto:"
 
 #: main.rs
 msgid "Play"
-msgstr "Abspielen"
+msgstr "Play"
 
 #: main.rs
 msgid "WPM:"
@@ -22,40 +22,41 @@ msgstr "WPM:"
 
 #: main.rs
 msgid "File/Quit\t"
-msgstr "Datei/Beenden\t"
+msgstr "Archivo/Salir\t"
 
 #: main.rs
 msgid "Info/About"
-msgstr "Info/Über"
+msgstr "Información/Acerca de"
 
 #: main.rs
 msgid "Morse Code Trainer\n\nVersion: "
-msgstr "Morsecode-Trainer\n\nVersion: "
+msgstr "Entrenador de código Morse\n\nVersión:"
 
 #: main.rs
 msgid ""
 "\n{} {VERSION}, \nPlatform: {CURRENT_PLATFORM} \nCompiled on: {COMPILED_ON} \nRust Version: {rustc_version} \nComplied at {compile_datetime}"
+
 msgstr ""
-"\n{} {VERSION}, \nPlattform: {CURRENT_PLATFORM} \nKompiliert am: {COMPILED_ON} \nRust-Version: {rustc_version} \nKompiliert am {compile_datetime}"
+"\n{} {VERSIÓN}, \nPlataforma: {CURRENT_PLATFORM} \nCompilado el: {COMPILED_ON} \nRust-Versión: {rustc_Versión} \nCompilado el {compile_datetime}"
 
 #: main.rs
 msgid "Icon could not be loaded"
-msgstr "Symbol konnte nicht geladen werden"
+msgstr "No se pudo cargar el icono"
 
 #: main.rs
 msgid "LanguageFile: {file_path} exists!"
-msgstr "Sprachdatei: {file_path} existiert!"
+msgstr "Archivo: {file_path} Existe!"
 
 #: main.rs
 msgid "File: {file_path} does not exist! Program abort"
-msgstr "Datei: {file_path} existiert nicht! Programmabbruch"
+msgstr "Archivo: {file_path} no existe! Aborto"
 
 msgid "Enter the Text you like to hear in Morse Code"
-msgstr "Geben Sie den Text ein, den Sie im Morsecode hören möchten"
+msgstr "Introduzca el texto, que desea escuchar en código Morse"
 
 msgid "adjust WPM (Words per minute)"
-msgstr "WPM (Wörter pro Minute) anpassen"
+msgstr "WPM (Palabras por minuto) adaptar"
+
 
 msgid "Play Morse Code"
-msgstr "Morse Code abspielen"
-
+msgstr "Reproducir código Morse"
