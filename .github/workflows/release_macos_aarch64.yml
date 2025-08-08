@@ -45,7 +45,6 @@ jobs:
           mkdir release
           cp target/aarch64-apple-darwin/release/morse release/morse_apple_aarch64
           #upx --best release/morse_apple_aarch64
-          cp icon.png release/
           cp *.mo release/
           cd release
           zip -r morse_macos-aarch64-v${{ steps.get_version.outputs.cargo_version }}.zip ./*

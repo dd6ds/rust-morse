@@ -43,7 +43,6 @@ jobs:
           mkdir release
           cp target/x86_64-pc-windows-gnu/release/morse.exe release/morse_win_x86_64.exe
           upx --best release/morse_win_x86_64.exe
-          cp icon.png release/
           cp *.mo release/
           cd release
           zip -r morse_windows-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip ./*

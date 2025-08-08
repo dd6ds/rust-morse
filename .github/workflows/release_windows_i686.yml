@@ -43,7 +43,6 @@ jobs:
           mkdir release
           cp target/i686-pc-windows-gnu/release/morse.exe release/morse_win_686.exe
           upx --best release/morse_win_686.exe
-          cp icon.png release/
           cp *.mo release/
           cd release
           zip -r morse_windows-i686-v${{ steps.get_version.outputs.cargo_version }}.zip ./*
