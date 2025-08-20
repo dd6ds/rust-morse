@@ -45,6 +45,7 @@ jobs:
           mkdir release
           cp target/x86_64-apple-darwin/release/morse release/morse_apple_x86_64
           #upx --best release/morse_apple_x86_64
+          cp *.mo release/
           cd release
           zip -r morse_macos-x86_64-v${{ steps.get_version.outputs.cargo_version }}.zip ./*
           ls -lathr
